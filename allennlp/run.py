@@ -3,6 +3,12 @@ import logging
 import os
 import sys
 
+
+#import torch.backends.cudnn as cudnn
+#cudnn.enabled = True
+#cudnn.benchmark = True
+os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
+
 if os.environ.get("ALLENNLP_DEBUG"):
     LEVEL = logging.DEBUG
 else:
