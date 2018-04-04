@@ -268,7 +268,17 @@ def train_model(params: Params,
                                     if key in datasets_for_vocab_creation))
     vocab.save_to_files(os.path.join(serialization_dir, "vocabulary"))
 
-    model = Model.from_params(vocab, params.pop('model'))
+    ## calculate number of items:
+    total_items = 0
+    for key, dataset in all_datasets.items():
+        for instance in dataset:
+            total_items+=1
+    print(total_items)
+    model_params = params.pop('model')
+    model_params.params['total_items'] = total_items
+
+    # print("\n\n\n\n\n\n-------",model_params.params, type(model_params),"\n\n\n\n\n\n-------")
+    model = Model.from_params(vocab, model_params)
     iterator = DataIterator.from_params(params.pop("iterator"))
     iterator.index_with(vocab)
 
