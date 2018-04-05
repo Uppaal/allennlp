@@ -114,7 +114,7 @@ class SquadReader(DatasetReader):
         additional_metadata = {
             "id": id
         }
-        print(additional_metadata)
+        # print(additional_metadata)
         return util.make_reading_comprehension_instance(self._tokenizer.tokenize(question_text),
                                                         passage_tokens,
                                                         self._token_indexers,

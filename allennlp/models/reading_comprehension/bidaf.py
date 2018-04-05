@@ -330,23 +330,25 @@ class BidirectionalAttentionFlow(Model):
             self.current_batch_count = 0
 
         file = open(filename, 'a')
-        # print(type(span_start_logits), type(span_start_logits.data[0]))
-
-        span_start_logits_data = np.asarray(span_start_logits.data[0]).tolist()
-        # span_start_probs_data = np.asarray(span_start_probs.data[0]).tolist()
-        span_end_logits_data = np.asarray(span_end_logits.data[0]).tolist()
-        # span_end_probs_data = np.asarray(span_end_probs.data[0]).tolist()
+        print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
+        # print(torch.shape(span_start_logits.data))
+        span_start_logits_data = np.array(span_start_logits.data).tolist()
+        # span_start_probs_data = np.asarray(span_start_probs.data).tolist()
+        span_end_logits_data = np.array(span_end_logits.data).tolist()
+        # span_end_probs_data = np.asarray(span_end_probs.data).tolist()
 
         jsonObjectList = []
 
+        i = 0
         for metadatum in metadata:
             jsonObject = {}
             jsonObject['id'] = metadatum['id']
-            jsonObject['span_start_logits'] = span_start_logits_data
-            # jsonObject['span_start_probs'] = span_start_probs_data
-            jsonObject['span_end_logits'] = span_end_logits_data
+            jsonObject['span_start_logits'] = span_start_logits_data[i]
+            # jsonObject['span_start_probs'] = span_start_probs_data[i]
+            jsonObject['span_end_logits'] = span_end_logits_data[i]
             # jsonObject['span_end_probs'] = span_end_probs_data
             jsonObjectList.append(jsonObject)
+            i+=1
         json.dump(jsonObjectList, file)
 
         self.saved_batch_count += len(metadata)
