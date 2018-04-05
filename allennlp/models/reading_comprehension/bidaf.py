@@ -317,7 +317,7 @@ class BidirectionalAttentionFlow(Model):
     def dump_logits(self, metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs):
         print("In dump logits!")
         limit = 1000
-        limit = 5
+        #limit = 5
         eval_per_epoch = "eval_per_epoch"
         if not os.path.isdir(eval_per_epoch):
             os.makedirs(eval_per_epoch)
