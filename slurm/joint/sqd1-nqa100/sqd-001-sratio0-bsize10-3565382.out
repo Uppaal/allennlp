@@ -1,0 +1,25 @@
+data/NewsQAtrain-v1.1.json
+2018-04-05 01:56:21,190 - INFO - allennlp.common.params - dataset_reader.type = squad
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.type = word
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.type = spacy
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.language = en_core_web_sm
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.pos_tags = False
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.parse = False
+2018-04-05 01:56:21,191 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.ner = False
+2018-04-05 01:56:21,693 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_filter.type = pass_through
+2018-04-05 01:56:21,693 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_stemmer.type = pass_through
+2018-04-05 01:56:21,693 - INFO - allennlp.common.params - dataset_reader.tokenizer.start_tokens = None
+2018-04-05 01:56:21,693 - INFO - allennlp.common.params - dataset_reader.tokenizer.end_tokens = None
+2018-04-05 01:56:21,693 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.type = single_id
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.namespace = tokens
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.lowercase_tokens = True
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.type = characters
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.namespace = token_characters
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.byte_encoding = utf-8
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.lowercase_characters = False
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.start_tokens = [259]
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.end_tokens = [260]
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - dataset_reader.lazy = False
+2018-04-05 01:56:21,694 - INFO - allennlp.common.params - validation_dataset_reader = None
+2018-04-05 01:56:21,695 - INFO - allennlp.common.params - train_data_path = data/joint_sqd_001_0/train-v1.1.json
+2018-04-05 01:56:21,695 - INFO - allennlp.commands.train - Reading training data from data/joint_sqd_001_0/train-v1.1.json
