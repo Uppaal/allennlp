@@ -1,0 +1,2606 @@
+0
+4943
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 441, 200])
+Passage Length:  441
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 441, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 441, 16])
+Passage ques attention dim:  torch.Size([40, 441, 16])
+Passage question vectors dim:  torch.Size([40, 441, 200])
+Question Passage Similarity dim:  torch.Size([40, 441])
+Question passage attention dim:  torch.Size([40, 441])
+Final Merged Passage dim:  torch.Size([40, 441, 800])
+Modeled Passage dim:  torch.Size([40, 441, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 441, 1000])
+Span start logits:  torch.Size([40, 441])
+span start probs dim:  torch.Size([40, 441])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 441]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 215, 200])
+Passage Length:  215
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 215, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 215, 12])
+Passage ques attention dim:  torch.Size([40, 215, 12])
+Passage question vectors dim:  torch.Size([40, 215, 200])
+Question Passage Similarity dim:  torch.Size([40, 215])
+Question passage attention dim:  torch.Size([40, 215])
+Final Merged Passage dim:  torch.Size([40, 215, 800])
+Modeled Passage dim:  torch.Size([40, 215, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 215, 1000])
+Span start logits:  torch.Size([40, 215])
+span start probs dim:  torch.Size([40, 215])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 215]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 658, 200])
+Passage Length:  658
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 658, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 658, 17])
+Passage ques attention dim:  torch.Size([40, 658, 17])
+Passage question vectors dim:  torch.Size([40, 658, 200])
+Question Passage Similarity dim:  torch.Size([40, 658])
+Question passage attention dim:  torch.Size([40, 658])
+Final Merged Passage dim:  torch.Size([40, 658, 800])
+Modeled Passage dim:  torch.Size([40, 658, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 658, 1000])
+Span start logits:  torch.Size([40, 658])
+span start probs dim:  torch.Size([40, 658])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 658]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 720, 200])
+Passage Length:  720
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 720, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 720, 15])
+Passage ques attention dim:  torch.Size([40, 720, 15])
+Passage question vectors dim:  torch.Size([40, 720, 200])
+Question Passage Similarity dim:  torch.Size([40, 720])
+Question passage attention dim:  torch.Size([40, 720])
+Final Merged Passage dim:  torch.Size([40, 720, 800])
+Modeled Passage dim:  torch.Size([40, 720, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 720, 1000])
+Span start logits:  torch.Size([40, 720])
+span start probs dim:  torch.Size([40, 720])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 720]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 564, 200])
+Passage Length:  564
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 564, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 564, 13])
+Passage ques attention dim:  torch.Size([40, 564, 13])
+Passage question vectors dim:  torch.Size([40, 564, 200])
+Question Passage Similarity dim:  torch.Size([40, 564])
+Question passage attention dim:  torch.Size([40, 564])
+Final Merged Passage dim:  torch.Size([40, 564, 800])
+Modeled Passage dim:  torch.Size([40, 564, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 564, 1000])
+Span start logits:  torch.Size([40, 564])
+span start probs dim:  torch.Size([40, 564])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 564]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 231, 200])
+Passage Length:  231
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 231, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 231, 13])
+Passage ques attention dim:  torch.Size([40, 231, 13])
+Passage question vectors dim:  torch.Size([40, 231, 200])
+Question Passage Similarity dim:  torch.Size([40, 231])
+Question passage attention dim:  torch.Size([40, 231])
+Final Merged Passage dim:  torch.Size([40, 231, 800])
+Modeled Passage dim:  torch.Size([40, 231, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 231, 1000])
+Span start logits:  torch.Size([40, 231])
+span start probs dim:  torch.Size([40, 231])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 231]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1602, 200])
+Passage Length:  1602
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1602, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1602, 14])
+Passage ques attention dim:  torch.Size([40, 1602, 14])
+Passage question vectors dim:  torch.Size([40, 1602, 200])
+Question Passage Similarity dim:  torch.Size([40, 1602])
+Question passage attention dim:  torch.Size([40, 1602])
+Final Merged Passage dim:  torch.Size([40, 1602, 800])
+Modeled Passage dim:  torch.Size([40, 1602, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1602, 1000])
+Span start logits:  torch.Size([40, 1602])
+span start probs dim:  torch.Size([40, 1602])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1602]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 1430, 200])
+Passage Length:  1430
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 1430, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1430, 16])
+Passage ques attention dim:  torch.Size([40, 1430, 16])
+Passage question vectors dim:  torch.Size([40, 1430, 200])
+Question Passage Similarity dim:  torch.Size([40, 1430])
+Question passage attention dim:  torch.Size([40, 1430])
+Final Merged Passage dim:  torch.Size([40, 1430, 800])
+Modeled Passage dim:  torch.Size([40, 1430, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1430, 1000])
+Span start logits:  torch.Size([40, 1430])
+span start probs dim:  torch.Size([40, 1430])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1430]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 415, 200])
+Passage Length:  415
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 415, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 415, 13])
+Passage ques attention dim:  torch.Size([40, 415, 13])
+Passage question vectors dim:  torch.Size([40, 415, 200])
+Question Passage Similarity dim:  torch.Size([40, 415])
+Question passage attention dim:  torch.Size([40, 415])
+Final Merged Passage dim:  torch.Size([40, 415, 800])
+Modeled Passage dim:  torch.Size([40, 415, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 415, 1000])
+Span start logits:  torch.Size([40, 415])
+span start probs dim:  torch.Size([40, 415])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 415]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 19, 200])
+Embedded passage dim:  torch.Size([40, 897, 200])
+Passage Length:  897
+Encoded question dim:  torch.Size([40, 19, 200])
+Encoded passage dim:  torch.Size([40, 897, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 897, 19])
+Passage ques attention dim:  torch.Size([40, 897, 19])
+Passage question vectors dim:  torch.Size([40, 897, 200])
+Question Passage Similarity dim:  torch.Size([40, 897])
+Question passage attention dim:  torch.Size([40, 897])
+Final Merged Passage dim:  torch.Size([40, 897, 800])
+Modeled Passage dim:  torch.Size([40, 897, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 897, 1000])
+Span start logits:  torch.Size([40, 897])
+span start probs dim:  torch.Size([40, 897])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 897]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 395, 200])
+Passage Length:  395
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 395, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 395, 16])
+Passage ques attention dim:  torch.Size([40, 395, 16])
+Passage question vectors dim:  torch.Size([40, 395, 200])
+Question Passage Similarity dim:  torch.Size([40, 395])
+Question passage attention dim:  torch.Size([40, 395])
+Final Merged Passage dim:  torch.Size([40, 395, 800])
+Modeled Passage dim:  torch.Size([40, 395, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 395, 1000])
+Span start logits:  torch.Size([40, 395])
+span start probs dim:  torch.Size([40, 395])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 395]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 382, 200])
+Passage Length:  382
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 382, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 382, 15])
+Passage ques attention dim:  torch.Size([40, 382, 15])
+Passage question vectors dim:  torch.Size([40, 382, 200])
+Question Passage Similarity dim:  torch.Size([40, 382])
+Question passage attention dim:  torch.Size([40, 382])
+Final Merged Passage dim:  torch.Size([40, 382, 800])
+Modeled Passage dim:  torch.Size([40, 382, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 382, 1000])
+Span start logits:  torch.Size([40, 382])
+span start probs dim:  torch.Size([40, 382])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 382]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 860, 200])
+Passage Length:  860
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 860, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 860, 15])
+Passage ques attention dim:  torch.Size([40, 860, 15])
+Passage question vectors dim:  torch.Size([40, 860, 200])
+Question Passage Similarity dim:  torch.Size([40, 860])
+Question passage attention dim:  torch.Size([40, 860])
+Final Merged Passage dim:  torch.Size([40, 860, 800])
+Modeled Passage dim:  torch.Size([40, 860, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 860, 1000])
+Span start logits:  torch.Size([40, 860])
+span start probs dim:  torch.Size([40, 860])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 860]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1198, 200])
+Passage Length:  1198
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1198, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1198, 14])
+Passage ques attention dim:  torch.Size([40, 1198, 14])
+Passage question vectors dim:  torch.Size([40, 1198, 200])
+Question Passage Similarity dim:  torch.Size([40, 1198])
+Question passage attention dim:  torch.Size([40, 1198])
+Final Merged Passage dim:  torch.Size([40, 1198, 800])
+Modeled Passage dim:  torch.Size([40, 1198, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1198, 1000])
+Span start logits:  torch.Size([40, 1198])
+span start probs dim:  torch.Size([40, 1198])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1198]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 823, 200])
+Passage Length:  823
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 823, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 823, 18])
+Passage ques attention dim:  torch.Size([40, 823, 18])
+Passage question vectors dim:  torch.Size([40, 823, 200])
+Question Passage Similarity dim:  torch.Size([40, 823])
+Question passage attention dim:  torch.Size([40, 823])
+Final Merged Passage dim:  torch.Size([40, 823, 800])
+Modeled Passage dim:  torch.Size([40, 823, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 823, 1000])
+Span start logits:  torch.Size([40, 823])
+span start probs dim:  torch.Size([40, 823])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 823]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 875, 200])
+Passage Length:  875
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 875, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 875, 13])
+Passage ques attention dim:  torch.Size([40, 875, 13])
+Passage question vectors dim:  torch.Size([40, 875, 200])
+Question Passage Similarity dim:  torch.Size([40, 875])
+Question passage attention dim:  torch.Size([40, 875])
+Final Merged Passage dim:  torch.Size([40, 875, 800])
+Modeled Passage dim:  torch.Size([40, 875, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 875, 1000])
+Span start logits:  torch.Size([40, 875])
+span start probs dim:  torch.Size([40, 875])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 875]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 11, 200])
+Embedded passage dim:  torch.Size([40, 538, 200])
+Passage Length:  538
+Encoded question dim:  torch.Size([40, 11, 200])
+Encoded passage dim:  torch.Size([40, 538, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 538, 11])
+Passage ques attention dim:  torch.Size([40, 538, 11])
+Passage question vectors dim:  torch.Size([40, 538, 200])
+Question Passage Similarity dim:  torch.Size([40, 538])
+Question passage attention dim:  torch.Size([40, 538])
+Final Merged Passage dim:  torch.Size([40, 538, 800])
+Modeled Passage dim:  torch.Size([40, 538, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 538, 1000])
+Span start logits:  torch.Size([40, 538])
+span start probs dim:  torch.Size([40, 538])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 538]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 563, 200])
+Passage Length:  563
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 563, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 563, 16])
+Passage ques attention dim:  torch.Size([40, 563, 16])
+Passage question vectors dim:  torch.Size([40, 563, 200])
+Question Passage Similarity dim:  torch.Size([40, 563])
+Question passage attention dim:  torch.Size([40, 563])
+Final Merged Passage dim:  torch.Size([40, 563, 800])
+Modeled Passage dim:  torch.Size([40, 563, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 563, 1000])
+Span start logits:  torch.Size([40, 563])
+span start probs dim:  torch.Size([40, 563])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 563]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 1059, 200])
+Passage Length:  1059
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 1059, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1059, 16])
+Passage ques attention dim:  torch.Size([40, 1059, 16])
+Passage question vectors dim:  torch.Size([40, 1059, 200])
+Question Passage Similarity dim:  torch.Size([40, 1059])
+Question passage attention dim:  torch.Size([40, 1059])
+Final Merged Passage dim:  torch.Size([40, 1059, 800])
+Modeled Passage dim:  torch.Size([40, 1059, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1059, 1000])
+Span start logits:  torch.Size([40, 1059])
+span start probs dim:  torch.Size([40, 1059])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1059]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 739, 200])
+Passage Length:  739
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 739, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 739, 12])
+Passage ques attention dim:  torch.Size([40, 739, 12])
+Passage question vectors dim:  torch.Size([40, 739, 200])
+Question Passage Similarity dim:  torch.Size([40, 739])
+Question passage attention dim:  torch.Size([40, 739])
+Final Merged Passage dim:  torch.Size([40, 739, 800])
+Modeled Passage dim:  torch.Size([40, 739, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 739, 1000])
+Span start logits:  torch.Size([40, 739])
+span start probs dim:  torch.Size([40, 739])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 739]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 648, 200])
+Passage Length:  648
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 648, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 648, 14])
+Passage ques attention dim:  torch.Size([40, 648, 14])
+Passage question vectors dim:  torch.Size([40, 648, 200])
+Question Passage Similarity dim:  torch.Size([40, 648])
+Question passage attention dim:  torch.Size([40, 648])
+Final Merged Passage dim:  torch.Size([40, 648, 800])
+Modeled Passage dim:  torch.Size([40, 648, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 648, 1000])
+Span start logits:  torch.Size([40, 648])
+span start probs dim:  torch.Size([40, 648])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 648]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 764, 200])
+Passage Length:  764
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 764, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 764, 18])
+Passage ques attention dim:  torch.Size([40, 764, 18])
+Passage question vectors dim:  torch.Size([40, 764, 200])
+Question Passage Similarity dim:  torch.Size([40, 764])
+Question passage attention dim:  torch.Size([40, 764])
+Final Merged Passage dim:  torch.Size([40, 764, 800])
+Modeled Passage dim:  torch.Size([40, 764, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 764, 1000])
+Span start logits:  torch.Size([40, 764])
+span start probs dim:  torch.Size([40, 764])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 764]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 19, 200])
+Embedded passage dim:  torch.Size([40, 491, 200])
+Passage Length:  491
+Encoded question dim:  torch.Size([40, 19, 200])
+Encoded passage dim:  torch.Size([40, 491, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 491, 19])
+Passage ques attention dim:  torch.Size([40, 491, 19])
+Passage question vectors dim:  torch.Size([40, 491, 200])
+Question Passage Similarity dim:  torch.Size([40, 491])
+Question passage attention dim:  torch.Size([40, 491])
+Final Merged Passage dim:  torch.Size([40, 491, 800])
+Modeled Passage dim:  torch.Size([40, 491, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 491, 1000])
+Span start logits:  torch.Size([40, 491])
+span start probs dim:  torch.Size([40, 491])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 491]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1036, 200])
+Passage Length:  1036
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1036, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1036, 15])
+Passage ques attention dim:  torch.Size([40, 1036, 15])
+Passage question vectors dim:  torch.Size([40, 1036, 200])
+Question Passage Similarity dim:  torch.Size([40, 1036])
+Question passage attention dim:  torch.Size([40, 1036])
+Final Merged Passage dim:  torch.Size([40, 1036, 800])
+Modeled Passage dim:  torch.Size([40, 1036, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1036, 1000])
+Span start logits:  torch.Size([40, 1036])
+span start probs dim:  torch.Size([40, 1036])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1036]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 1127, 200])
+Passage Length:  1127
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 1127, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1127, 13])
+Passage ques attention dim:  torch.Size([40, 1127, 13])
+Passage question vectors dim:  torch.Size([40, 1127, 200])
+Question Passage Similarity dim:  torch.Size([40, 1127])
+Question passage attention dim:  torch.Size([40, 1127])
+Final Merged Passage dim:  torch.Size([40, 1127, 800])
+Modeled Passage dim:  torch.Size([40, 1127, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1127, 1000])
+Span start logits:  torch.Size([40, 1127])
+span start probs dim:  torch.Size([40, 1127])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1127]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 637, 200])
+Passage Length:  637
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 637, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 637, 13])
+Passage ques attention dim:  torch.Size([40, 637, 13])
+Passage question vectors dim:  torch.Size([40, 637, 200])
+Question Passage Similarity dim:  torch.Size([40, 637])
+Question passage attention dim:  torch.Size([40, 637])
+Final Merged Passage dim:  torch.Size([40, 637, 800])
+Modeled Passage dim:  torch.Size([40, 637, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 637, 1000])
+Span start logits:  torch.Size([40, 637])
+span start probs dim:  torch.Size([40, 637])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 637]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 606, 200])
+Passage Length:  606
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 606, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 606, 12])
+Passage ques attention dim:  torch.Size([40, 606, 12])
+Passage question vectors dim:  torch.Size([40, 606, 200])
+Question Passage Similarity dim:  torch.Size([40, 606])
+Question passage attention dim:  torch.Size([40, 606])
+Final Merged Passage dim:  torch.Size([40, 606, 800])
+Modeled Passage dim:  torch.Size([40, 606, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 606, 1000])
+Span start logits:  torch.Size([40, 606])
+span start probs dim:  torch.Size([40, 606])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 606]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 349, 200])
+Passage Length:  349
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 349, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 349, 15])
+Passage ques attention dim:  torch.Size([40, 349, 15])
+Passage question vectors dim:  torch.Size([40, 349, 200])
+Question Passage Similarity dim:  torch.Size([40, 349])
+Question passage attention dim:  torch.Size([40, 349])
+Final Merged Passage dim:  torch.Size([40, 349, 800])
+Modeled Passage dim:  torch.Size([40, 349, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 349, 1000])
+Span start logits:  torch.Size([40, 349])
+span start probs dim:  torch.Size([40, 349])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 349]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 19, 200])
+Embedded passage dim:  torch.Size([40, 1256, 200])
+Passage Length:  1256
+Encoded question dim:  torch.Size([40, 19, 200])
+Encoded passage dim:  torch.Size([40, 1256, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1256, 19])
+Passage ques attention dim:  torch.Size([40, 1256, 19])
+Passage question vectors dim:  torch.Size([40, 1256, 200])
+Question Passage Similarity dim:  torch.Size([40, 1256])
+Question passage attention dim:  torch.Size([40, 1256])
+Final Merged Passage dim:  torch.Size([40, 1256, 800])
+Modeled Passage dim:  torch.Size([40, 1256, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1256, 1000])
+Span start logits:  torch.Size([40, 1256])
+span start probs dim:  torch.Size([40, 1256])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1256]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 20, 200])
+Embedded passage dim:  torch.Size([40, 247, 200])
+Passage Length:  247
+Encoded question dim:  torch.Size([40, 20, 200])
+Encoded passage dim:  torch.Size([40, 247, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 247, 20])
+Passage ques attention dim:  torch.Size([40, 247, 20])
+Passage question vectors dim:  torch.Size([40, 247, 200])
+Question Passage Similarity dim:  torch.Size([40, 247])
+Question passage attention dim:  torch.Size([40, 247])
+Final Merged Passage dim:  torch.Size([40, 247, 800])
+Modeled Passage dim:  torch.Size([40, 247, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 247, 1000])
+Span start logits:  torch.Size([40, 247])
+span start probs dim:  torch.Size([40, 247])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 247]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 198, 200])
+Passage Length:  198
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 198, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 198, 15])
+Passage ques attention dim:  torch.Size([40, 198, 15])
+Passage question vectors dim:  torch.Size([40, 198, 200])
+Question Passage Similarity dim:  torch.Size([40, 198])
+Question passage attention dim:  torch.Size([40, 198])
+Final Merged Passage dim:  torch.Size([40, 198, 800])
+Modeled Passage dim:  torch.Size([40, 198, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 198, 1000])
+Span start logits:  torch.Size([40, 198])
+span start probs dim:  torch.Size([40, 198])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 198]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 356, 200])
+Passage Length:  356
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 356, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 356, 15])
+Passage ques attention dim:  torch.Size([40, 356, 15])
+Passage question vectors dim:  torch.Size([40, 356, 200])
+Question Passage Similarity dim:  torch.Size([40, 356])
+Question passage attention dim:  torch.Size([40, 356])
+Final Merged Passage dim:  torch.Size([40, 356, 800])
+Modeled Passage dim:  torch.Size([40, 356, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 356, 1000])
+Span start logits:  torch.Size([40, 356])
+span start probs dim:  torch.Size([40, 356])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 356]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1040, 200])
+Passage Length:  1040
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1040, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1040, 15])
+Passage ques attention dim:  torch.Size([40, 1040, 15])
+Passage question vectors dim:  torch.Size([40, 1040, 200])
+Question Passage Similarity dim:  torch.Size([40, 1040])
+Question passage attention dim:  torch.Size([40, 1040])
+Final Merged Passage dim:  torch.Size([40, 1040, 800])
+Modeled Passage dim:  torch.Size([40, 1040, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1040, 1000])
+Span start logits:  torch.Size([40, 1040])
+span start probs dim:  torch.Size([40, 1040])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1040]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1368, 200])
+Passage Length:  1368
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1368, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1368, 14])
+Passage ques attention dim:  torch.Size([40, 1368, 14])
+Passage question vectors dim:  torch.Size([40, 1368, 200])
+Question Passage Similarity dim:  torch.Size([40, 1368])
+Question passage attention dim:  torch.Size([40, 1368])
+Final Merged Passage dim:  torch.Size([40, 1368, 800])
+Modeled Passage dim:  torch.Size([40, 1368, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1368, 1000])
+Span start logits:  torch.Size([40, 1368])
+span start probs dim:  torch.Size([40, 1368])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1368]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 712, 200])
+Passage Length:  712
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 712, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 712, 14])
+Passage ques attention dim:  torch.Size([40, 712, 14])
+Passage question vectors dim:  torch.Size([40, 712, 200])
+Question Passage Similarity dim:  torch.Size([40, 712])
+Question passage attention dim:  torch.Size([40, 712])
+Final Merged Passage dim:  torch.Size([40, 712, 800])
+Modeled Passage dim:  torch.Size([40, 712, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 712, 1000])
+Span start logits:  torch.Size([40, 712])
+span start probs dim:  torch.Size([40, 712])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 712]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 500, 200])
+Passage Length:  500
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 500, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 500, 18])
+Passage ques attention dim:  torch.Size([40, 500, 18])
+Passage question vectors dim:  torch.Size([40, 500, 200])
+Question Passage Similarity dim:  torch.Size([40, 500])
+Question passage attention dim:  torch.Size([40, 500])
+Final Merged Passage dim:  torch.Size([40, 500, 800])
+Modeled Passage dim:  torch.Size([40, 500, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 500, 1000])
+Span start logits:  torch.Size([40, 500])
+span start probs dim:  torch.Size([40, 500])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 500]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 673, 200])
+Passage Length:  673
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 673, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 673, 16])
+Passage ques attention dim:  torch.Size([40, 673, 16])
+Passage question vectors dim:  torch.Size([40, 673, 200])
+Question Passage Similarity dim:  torch.Size([40, 673])
+Question passage attention dim:  torch.Size([40, 673])
+Final Merged Passage dim:  torch.Size([40, 673, 800])
+Modeled Passage dim:  torch.Size([40, 673, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 673, 1000])
+Span start logits:  torch.Size([40, 673])
+span start probs dim:  torch.Size([40, 673])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 673]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 405, 200])
+Passage Length:  405
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 405, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 405, 13])
+Passage ques attention dim:  torch.Size([40, 405, 13])
+Passage question vectors dim:  torch.Size([40, 405, 200])
+Question Passage Similarity dim:  torch.Size([40, 405])
+Question passage attention dim:  torch.Size([40, 405])
+Final Merged Passage dim:  torch.Size([40, 405, 800])
+Modeled Passage dim:  torch.Size([40, 405, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 405, 1000])
+Span start logits:  torch.Size([40, 405])
+span start probs dim:  torch.Size([40, 405])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 405]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 589, 200])
+Passage Length:  589
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 589, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 589, 14])
+Passage ques attention dim:  torch.Size([40, 589, 14])
+Passage question vectors dim:  torch.Size([40, 589, 200])
+Question Passage Similarity dim:  torch.Size([40, 589])
+Question passage attention dim:  torch.Size([40, 589])
+Final Merged Passage dim:  torch.Size([40, 589, 800])
+Modeled Passage dim:  torch.Size([40, 589, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 589, 1000])
+Span start logits:  torch.Size([40, 589])
+span start probs dim:  torch.Size([40, 589])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 589]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 673, 200])
+Passage Length:  673
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 673, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 673, 15])
+Passage ques attention dim:  torch.Size([40, 673, 15])
+Passage question vectors dim:  torch.Size([40, 673, 200])
+Question Passage Similarity dim:  torch.Size([40, 673])
+Question passage attention dim:  torch.Size([40, 673])
+Final Merged Passage dim:  torch.Size([40, 673, 800])
+Modeled Passage dim:  torch.Size([40, 673, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 673, 1000])
+Span start logits:  torch.Size([40, 673])
+span start probs dim:  torch.Size([40, 673])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 673]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 1251, 200])
+Passage Length:  1251
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 1251, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1251, 13])
+Passage ques attention dim:  torch.Size([40, 1251, 13])
+Passage question vectors dim:  torch.Size([40, 1251, 200])
+Question Passage Similarity dim:  torch.Size([40, 1251])
+Question passage attention dim:  torch.Size([40, 1251])
+Final Merged Passage dim:  torch.Size([40, 1251, 800])
+Modeled Passage dim:  torch.Size([40, 1251, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1251, 1000])
+Span start logits:  torch.Size([40, 1251])
+span start probs dim:  torch.Size([40, 1251])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1251]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 923, 200])
+Passage Length:  923
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 923, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 923, 16])
+Passage ques attention dim:  torch.Size([40, 923, 16])
+Passage question vectors dim:  torch.Size([40, 923, 200])
+Question Passage Similarity dim:  torch.Size([40, 923])
+Question passage attention dim:  torch.Size([40, 923])
+Final Merged Passage dim:  torch.Size([40, 923, 800])
+Modeled Passage dim:  torch.Size([40, 923, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 923, 1000])
+Span start logits:  torch.Size([40, 923])
+span start probs dim:  torch.Size([40, 923])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 923]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 975, 200])
+Passage Length:  975
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 975, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 975, 15])
+Passage ques attention dim:  torch.Size([40, 975, 15])
+Passage question vectors dim:  torch.Size([40, 975, 200])
+Question Passage Similarity dim:  torch.Size([40, 975])
+Question passage attention dim:  torch.Size([40, 975])
+Final Merged Passage dim:  torch.Size([40, 975, 800])
+Modeled Passage dim:  torch.Size([40, 975, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 975, 1000])
+Span start logits:  torch.Size([40, 975])
+span start probs dim:  torch.Size([40, 975])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 975]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1164, 200])
+Passage Length:  1164
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1164, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1164, 14])
+Passage ques attention dim:  torch.Size([40, 1164, 14])
+Passage question vectors dim:  torch.Size([40, 1164, 200])
+Question Passage Similarity dim:  torch.Size([40, 1164])
+Question passage attention dim:  torch.Size([40, 1164])
+Final Merged Passage dim:  torch.Size([40, 1164, 800])
+Modeled Passage dim:  torch.Size([40, 1164, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1164, 1000])
+Span start logits:  torch.Size([40, 1164])
+span start probs dim:  torch.Size([40, 1164])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1164]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 365, 200])
+Passage Length:  365
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 365, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 365, 16])
+Passage ques attention dim:  torch.Size([40, 365, 16])
+Passage question vectors dim:  torch.Size([40, 365, 200])
+Question Passage Similarity dim:  torch.Size([40, 365])
+Question passage attention dim:  torch.Size([40, 365])
+Final Merged Passage dim:  torch.Size([40, 365, 800])
+Modeled Passage dim:  torch.Size([40, 365, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 365, 1000])
+Span start logits:  torch.Size([40, 365])
+span start probs dim:  torch.Size([40, 365])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 365]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 666, 200])
+Passage Length:  666
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 666, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 666, 16])
+Passage ques attention dim:  torch.Size([40, 666, 16])
+Passage question vectors dim:  torch.Size([40, 666, 200])
+Question Passage Similarity dim:  torch.Size([40, 666])
+Question passage attention dim:  torch.Size([40, 666])
+Final Merged Passage dim:  torch.Size([40, 666, 800])
+Modeled Passage dim:  torch.Size([40, 666, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 666, 1000])
+Span start logits:  torch.Size([40, 666])
+span start probs dim:  torch.Size([40, 666])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 666]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 379, 200])
+Passage Length:  379
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 379, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 379, 13])
+Passage ques attention dim:  torch.Size([40, 379, 13])
+Passage question vectors dim:  torch.Size([40, 379, 200])
+Question Passage Similarity dim:  torch.Size([40, 379])
+Question passage attention dim:  torch.Size([40, 379])
+Final Merged Passage dim:  torch.Size([40, 379, 800])
+Modeled Passage dim:  torch.Size([40, 379, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 379, 1000])
+Span start logits:  torch.Size([40, 379])
+span start probs dim:  torch.Size([40, 379])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 379]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1340, 200])
+Passage Length:  1340
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1340, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1340, 15])
+Passage ques attention dim:  torch.Size([40, 1340, 15])
+Passage question vectors dim:  torch.Size([40, 1340, 200])
+Question Passage Similarity dim:  torch.Size([40, 1340])
+Question passage attention dim:  torch.Size([40, 1340])
+Final Merged Passage dim:  torch.Size([40, 1340, 800])
+Modeled Passage dim:  torch.Size([40, 1340, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1340, 1000])
+Span start logits:  torch.Size([40, 1340])
+span start probs dim:  torch.Size([40, 1340])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1340]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 980, 200])
+Passage Length:  980
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 980, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 980, 15])
+Passage ques attention dim:  torch.Size([40, 980, 15])
+Passage question vectors dim:  torch.Size([40, 980, 200])
+Question Passage Similarity dim:  torch.Size([40, 980])
+Question passage attention dim:  torch.Size([40, 980])
+Final Merged Passage dim:  torch.Size([40, 980, 800])
+Modeled Passage dim:  torch.Size([40, 980, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 980, 1000])
+Span start logits:  torch.Size([40, 980])
+span start probs dim:  torch.Size([40, 980])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 980]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 1099, 200])
+Passage Length:  1099
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 1099, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1099, 16])
+Passage ques attention dim:  torch.Size([40, 1099, 16])
+Passage question vectors dim:  torch.Size([40, 1099, 200])
+Question Passage Similarity dim:  torch.Size([40, 1099])
+Question passage attention dim:  torch.Size([40, 1099])
+Final Merged Passage dim:  torch.Size([40, 1099, 800])
+Modeled Passage dim:  torch.Size([40, 1099, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1099, 1000])
+Span start logits:  torch.Size([40, 1099])
+span start probs dim:  torch.Size([40, 1099])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1099]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 274, 200])
+Passage Length:  274
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 274, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 274, 15])
+Passage ques attention dim:  torch.Size([40, 274, 15])
+Passage question vectors dim:  torch.Size([40, 274, 200])
+Question Passage Similarity dim:  torch.Size([40, 274])
+Question passage attention dim:  torch.Size([40, 274])
+Final Merged Passage dim:  torch.Size([40, 274, 800])
+Modeled Passage dim:  torch.Size([40, 274, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 274, 1000])
+Span start logits:  torch.Size([40, 274])
+span start probs dim:  torch.Size([40, 274])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 274]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 792, 200])
+Passage Length:  792
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 792, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 792, 13])
+Passage ques attention dim:  torch.Size([40, 792, 13])
+Passage question vectors dim:  torch.Size([40, 792, 200])
+Question Passage Similarity dim:  torch.Size([40, 792])
+Question passage attention dim:  torch.Size([40, 792])
+Final Merged Passage dim:  torch.Size([40, 792, 800])
+Modeled Passage dim:  torch.Size([40, 792, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 792, 1000])
+Span start logits:  torch.Size([40, 792])
+span start probs dim:  torch.Size([40, 792])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 792]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 811, 200])
+Passage Length:  811
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 811, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 811, 12])
+Passage ques attention dim:  torch.Size([40, 811, 12])
+Passage question vectors dim:  torch.Size([40, 811, 200])
+Question Passage Similarity dim:  torch.Size([40, 811])
+Question passage attention dim:  torch.Size([40, 811])
+Final Merged Passage dim:  torch.Size([40, 811, 800])
+Modeled Passage dim:  torch.Size([40, 811, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 811, 1000])
+Span start logits:  torch.Size([40, 811])
+span start probs dim:  torch.Size([40, 811])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 811]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 615, 200])
+Passage Length:  615
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 615, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 615, 16])
+Passage ques attention dim:  torch.Size([40, 615, 16])
+Passage question vectors dim:  torch.Size([40, 615, 200])
+Question Passage Similarity dim:  torch.Size([40, 615])
+Question passage attention dim:  torch.Size([40, 615])
+Final Merged Passage dim:  torch.Size([40, 615, 800])
+Modeled Passage dim:  torch.Size([40, 615, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 615, 1000])
+Span start logits:  torch.Size([40, 615])
+span start probs dim:  torch.Size([40, 615])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 615]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 19, 200])
+Embedded passage dim:  torch.Size([40, 1299, 200])
+Passage Length:  1299
+Encoded question dim:  torch.Size([40, 19, 200])
+Encoded passage dim:  torch.Size([40, 1299, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1299, 19])
+Passage ques attention dim:  torch.Size([40, 1299, 19])
+Passage question vectors dim:  torch.Size([40, 1299, 200])
+Question Passage Similarity dim:  torch.Size([40, 1299])
+Question passage attention dim:  torch.Size([40, 1299])
+Final Merged Passage dim:  torch.Size([40, 1299, 800])
+Modeled Passage dim:  torch.Size([40, 1299, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1299, 1000])
+Span start logits:  torch.Size([40, 1299])
+span start probs dim:  torch.Size([40, 1299])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1299]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 544, 200])
+Passage Length:  544
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 544, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 544, 13])
+Passage ques attention dim:  torch.Size([40, 544, 13])
+Passage question vectors dim:  torch.Size([40, 544, 200])
+Question Passage Similarity dim:  torch.Size([40, 544])
+Question passage attention dim:  torch.Size([40, 544])
+Final Merged Passage dim:  torch.Size([40, 544, 800])
+Modeled Passage dim:  torch.Size([40, 544, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 544, 1000])
+Span start logits:  torch.Size([40, 544])
+span start probs dim:  torch.Size([40, 544])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 544]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 1727, 200])
+Passage Length:  1727
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 1727, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1727, 13])
+Passage ques attention dim:  torch.Size([40, 1727, 13])
+Passage question vectors dim:  torch.Size([40, 1727, 200])
+Question Passage Similarity dim:  torch.Size([40, 1727])
+Question passage attention dim:  torch.Size([40, 1727])
+Final Merged Passage dim:  torch.Size([40, 1727, 800])
+Modeled Passage dim:  torch.Size([40, 1727, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1727, 1000])
+Span start logits:  torch.Size([40, 1727])
+span start probs dim:  torch.Size([40, 1727])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1727]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 288, 200])
+Passage Length:  288
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 288, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 288, 16])
+Passage ques attention dim:  torch.Size([40, 288, 16])
+Passage question vectors dim:  torch.Size([40, 288, 200])
+Question Passage Similarity dim:  torch.Size([40, 288])
+Question passage attention dim:  torch.Size([40, 288])
+Final Merged Passage dim:  torch.Size([40, 288, 800])
+Modeled Passage dim:  torch.Size([40, 288, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 288, 1000])
+Span start logits:  torch.Size([40, 288])
+span start probs dim:  torch.Size([40, 288])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 288]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 771, 200])
+Passage Length:  771
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 771, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 771, 13])
+Passage ques attention dim:  torch.Size([40, 771, 13])
+Passage question vectors dim:  torch.Size([40, 771, 200])
+Question Passage Similarity dim:  torch.Size([40, 771])
+Question passage attention dim:  torch.Size([40, 771])
+Final Merged Passage dim:  torch.Size([40, 771, 800])
+Modeled Passage dim:  torch.Size([40, 771, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 771, 1000])
+Span start logits:  torch.Size([40, 771])
+span start probs dim:  torch.Size([40, 771])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 771]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 25, 200])
+Embedded passage dim:  torch.Size([40, 749, 200])
+Passage Length:  749
+Encoded question dim:  torch.Size([40, 25, 200])
+Encoded passage dim:  torch.Size([40, 749, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 749, 25])
+Passage ques attention dim:  torch.Size([40, 749, 25])
+Passage question vectors dim:  torch.Size([40, 749, 200])
+Question Passage Similarity dim:  torch.Size([40, 749])
+Question passage attention dim:  torch.Size([40, 749])
+Final Merged Passage dim:  torch.Size([40, 749, 800])
+Modeled Passage dim:  torch.Size([40, 749, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 749, 1000])
+Span start logits:  torch.Size([40, 749])
+span start probs dim:  torch.Size([40, 749])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 749]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 913, 200])
+Passage Length:  913
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 913, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 913, 15])
+Passage ques attention dim:  torch.Size([40, 913, 15])
+Passage question vectors dim:  torch.Size([40, 913, 200])
+Question Passage Similarity dim:  torch.Size([40, 913])
+Question passage attention dim:  torch.Size([40, 913])
+Final Merged Passage dim:  torch.Size([40, 913, 800])
+Modeled Passage dim:  torch.Size([40, 913, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 913, 1000])
+Span start logits:  torch.Size([40, 913])
+span start probs dim:  torch.Size([40, 913])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 913]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 473, 200])
+Passage Length:  473
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 473, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 473, 13])
+Passage ques attention dim:  torch.Size([40, 473, 13])
+Passage question vectors dim:  torch.Size([40, 473, 200])
+Question Passage Similarity dim:  torch.Size([40, 473])
+Question passage attention dim:  torch.Size([40, 473])
+Final Merged Passage dim:  torch.Size([40, 473, 800])
+Modeled Passage dim:  torch.Size([40, 473, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 473, 1000])
+Span start logits:  torch.Size([40, 473])
+span start probs dim:  torch.Size([40, 473])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 473]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 883, 200])
+Passage Length:  883
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 883, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 883, 12])
+Passage ques attention dim:  torch.Size([40, 883, 12])
+Passage question vectors dim:  torch.Size([40, 883, 200])
+Question Passage Similarity dim:  torch.Size([40, 883])
+Question passage attention dim:  torch.Size([40, 883])
+Final Merged Passage dim:  torch.Size([40, 883, 800])
+Modeled Passage dim:  torch.Size([40, 883, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 883, 1000])
+Span start logits:  torch.Size([40, 883])
+span start probs dim:  torch.Size([40, 883])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 883]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 989, 200])
+Passage Length:  989
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 989, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 989, 14])
+Passage ques attention dim:  torch.Size([40, 989, 14])
+Passage question vectors dim:  torch.Size([40, 989, 200])
+Question Passage Similarity dim:  torch.Size([40, 989])
+Question passage attention dim:  torch.Size([40, 989])
+Final Merged Passage dim:  torch.Size([40, 989, 800])
+Modeled Passage dim:  torch.Size([40, 989, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 989, 1000])
+Span start logits:  torch.Size([40, 989])
+span start probs dim:  torch.Size([40, 989])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 989]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 306, 200])
+Passage Length:  306
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 306, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 306, 13])
+Passage ques attention dim:  torch.Size([40, 306, 13])
+Passage question vectors dim:  torch.Size([40, 306, 200])
+Question Passage Similarity dim:  torch.Size([40, 306])
+Question passage attention dim:  torch.Size([40, 306])
+Final Merged Passage dim:  torch.Size([40, 306, 800])
+Modeled Passage dim:  torch.Size([40, 306, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 306, 1000])
+Span start logits:  torch.Size([40, 306])
+span start probs dim:  torch.Size([40, 306])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 306]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 703, 200])
+Passage Length:  703
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 703, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 703, 14])
+Passage ques attention dim:  torch.Size([40, 703, 14])
+Passage question vectors dim:  torch.Size([40, 703, 200])
+Question Passage Similarity dim:  torch.Size([40, 703])
+Question passage attention dim:  torch.Size([40, 703])
+Final Merged Passage dim:  torch.Size([40, 703, 800])
+Modeled Passage dim:  torch.Size([40, 703, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 703, 1000])
+Span start logits:  torch.Size([40, 703])
+span start probs dim:  torch.Size([40, 703])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 703]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 692, 200])
+Passage Length:  692
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 692, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 692, 14])
+Passage ques attention dim:  torch.Size([40, 692, 14])
+Passage question vectors dim:  torch.Size([40, 692, 200])
+Question Passage Similarity dim:  torch.Size([40, 692])
+Question passage attention dim:  torch.Size([40, 692])
+Final Merged Passage dim:  torch.Size([40, 692, 800])
+Modeled Passage dim:  torch.Size([40, 692, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 692, 1000])
+Span start logits:  torch.Size([40, 692])
+span start probs dim:  torch.Size([40, 692])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 692]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 861, 200])
+Passage Length:  861
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 861, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 861, 13])
+Passage ques attention dim:  torch.Size([40, 861, 13])
+Passage question vectors dim:  torch.Size([40, 861, 200])
+Question Passage Similarity dim:  torch.Size([40, 861])
+Question passage attention dim:  torch.Size([40, 861])
+Final Merged Passage dim:  torch.Size([40, 861, 800])
+Modeled Passage dim:  torch.Size([40, 861, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 861, 1000])
+Span start logits:  torch.Size([40, 861])
+span start probs dim:  torch.Size([40, 861])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 861]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 19, 200])
+Embedded passage dim:  torch.Size([40, 155, 200])
+Passage Length:  155
+Encoded question dim:  torch.Size([40, 19, 200])
+Encoded passage dim:  torch.Size([40, 155, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 155, 19])
+Passage ques attention dim:  torch.Size([40, 155, 19])
+Passage question vectors dim:  torch.Size([40, 155, 200])
+Question Passage Similarity dim:  torch.Size([40, 155])
+Question passage attention dim:  torch.Size([40, 155])
+Final Merged Passage dim:  torch.Size([40, 155, 800])
+Modeled Passage dim:  torch.Size([40, 155, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 155, 1000])
+Span start logits:  torch.Size([40, 155])
+span start probs dim:  torch.Size([40, 155])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 155]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 426, 200])
+Passage Length:  426
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 426, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 426, 14])
+Passage ques attention dim:  torch.Size([40, 426, 14])
+Passage question vectors dim:  torch.Size([40, 426, 200])
+Question Passage Similarity dim:  torch.Size([40, 426])
+Question passage attention dim:  torch.Size([40, 426])
+Final Merged Passage dim:  torch.Size([40, 426, 800])
+Modeled Passage dim:  torch.Size([40, 426, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 426, 1000])
+Span start logits:  torch.Size([40, 426])
+span start probs dim:  torch.Size([40, 426])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 426]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 590, 200])
+Passage Length:  590
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 590, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 590, 18])
+Passage ques attention dim:  torch.Size([40, 590, 18])
+Passage question vectors dim:  torch.Size([40, 590, 200])
+Question Passage Similarity dim:  torch.Size([40, 590])
+Question passage attention dim:  torch.Size([40, 590])
+Final Merged Passage dim:  torch.Size([40, 590, 800])
+Modeled Passage dim:  torch.Size([40, 590, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 590, 1000])
+Span start logits:  torch.Size([40, 590])
+span start probs dim:  torch.Size([40, 590])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 590]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 10, 200])
+Embedded passage dim:  torch.Size([40, 308, 200])
+Passage Length:  308
+Encoded question dim:  torch.Size([40, 10, 200])
+Encoded passage dim:  torch.Size([40, 308, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 308, 10])
+Passage ques attention dim:  torch.Size([40, 308, 10])
+Passage question vectors dim:  torch.Size([40, 308, 200])
+Question Passage Similarity dim:  torch.Size([40, 308])
+Question passage attention dim:  torch.Size([40, 308])
+Final Merged Passage dim:  torch.Size([40, 308, 800])
+Modeled Passage dim:  torch.Size([40, 308, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 308, 1000])
+Span start logits:  torch.Size([40, 308])
+span start probs dim:  torch.Size([40, 308])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 308]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 11, 200])
+Embedded passage dim:  torch.Size([40, 341, 200])
+Passage Length:  341
+Encoded question dim:  torch.Size([40, 11, 200])
+Encoded passage dim:  torch.Size([40, 341, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 341, 11])
+Passage ques attention dim:  torch.Size([40, 341, 11])
+Passage question vectors dim:  torch.Size([40, 341, 200])
+Question Passage Similarity dim:  torch.Size([40, 341])
+Question passage attention dim:  torch.Size([40, 341])
+Final Merged Passage dim:  torch.Size([40, 341, 800])
+Modeled Passage dim:  torch.Size([40, 341, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 341, 1000])
+Span start logits:  torch.Size([40, 341])
+span start probs dim:  torch.Size([40, 341])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 341]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 1058, 200])
+Passage Length:  1058
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 1058, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1058, 13])
+Passage ques attention dim:  torch.Size([40, 1058, 13])
+Passage question vectors dim:  torch.Size([40, 1058, 200])
+Question Passage Similarity dim:  torch.Size([40, 1058])
+Question passage attention dim:  torch.Size([40, 1058])
+Final Merged Passage dim:  torch.Size([40, 1058, 800])
+Modeled Passage dim:  torch.Size([40, 1058, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1058, 1000])
+Span start logits:  torch.Size([40, 1058])
+span start probs dim:  torch.Size([40, 1058])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1058]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 999, 200])
+Passage Length:  999
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 999, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 999, 17])
+Passage ques attention dim:  torch.Size([40, 999, 17])
+Passage question vectors dim:  torch.Size([40, 999, 200])
+Question Passage Similarity dim:  torch.Size([40, 999])
+Question passage attention dim:  torch.Size([40, 999])
+Final Merged Passage dim:  torch.Size([40, 999, 800])
+Modeled Passage dim:  torch.Size([40, 999, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 999, 1000])
+Span start logits:  torch.Size([40, 999])
+span start probs dim:  torch.Size([40, 999])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 999]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 462, 200])
+Passage Length:  462
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 462, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 462, 13])
+Passage ques attention dim:  torch.Size([40, 462, 13])
+Passage question vectors dim:  torch.Size([40, 462, 200])
+Question Passage Similarity dim:  torch.Size([40, 462])
+Question passage attention dim:  torch.Size([40, 462])
+Final Merged Passage dim:  torch.Size([40, 462, 800])
+Modeled Passage dim:  torch.Size([40, 462, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 462, 1000])
+Span start logits:  torch.Size([40, 462])
+span start probs dim:  torch.Size([40, 462])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 462]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 531, 200])
+Passage Length:  531
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 531, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 531, 14])
+Passage ques attention dim:  torch.Size([40, 531, 14])
+Passage question vectors dim:  torch.Size([40, 531, 200])
+Question Passage Similarity dim:  torch.Size([40, 531])
+Question passage attention dim:  torch.Size([40, 531])
+Final Merged Passage dim:  torch.Size([40, 531, 800])
+Modeled Passage dim:  torch.Size([40, 531, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 531, 1000])
+Span start logits:  torch.Size([40, 531])
+span start probs dim:  torch.Size([40, 531])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 531]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 486, 200])
+Passage Length:  486
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 486, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 486, 12])
+Passage ques attention dim:  torch.Size([40, 486, 12])
+Passage question vectors dim:  torch.Size([40, 486, 200])
+Question Passage Similarity dim:  torch.Size([40, 486])
+Question passage attention dim:  torch.Size([40, 486])
+Final Merged Passage dim:  torch.Size([40, 486, 800])
+Modeled Passage dim:  torch.Size([40, 486, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 486, 1000])
+Span start logits:  torch.Size([40, 486])
+span start probs dim:  torch.Size([40, 486])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 486]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 469, 200])
+Passage Length:  469
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 469, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 469, 16])
+Passage ques attention dim:  torch.Size([40, 469, 16])
+Passage question vectors dim:  torch.Size([40, 469, 200])
+Question Passage Similarity dim:  torch.Size([40, 469])
+Question passage attention dim:  torch.Size([40, 469])
+Final Merged Passage dim:  torch.Size([40, 469, 800])
+Modeled Passage dim:  torch.Size([40, 469, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 469, 1000])
+Span start logits:  torch.Size([40, 469])
+span start probs dim:  torch.Size([40, 469])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 469]) 40
+METADATA: 
+Embedded question dim:  torch.Size([23, 10, 200])
+Embedded passage dim:  torch.Size([23, 2090, 200])
+Passage Length:  2090
+Encoded question dim:  torch.Size([23, 10, 200])
+Encoded passage dim:  torch.Size([23, 2090, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([23, 2090, 10])
+Passage ques attention dim:  torch.Size([23, 2090, 10])
+Passage question vectors dim:  torch.Size([23, 2090, 200])
+Question Passage Similarity dim:  torch.Size([23, 2090])
+Question passage attention dim:  torch.Size([23, 2090])
+Final Merged Passage dim:  torch.Size([23, 2090, 800])
+Modeled Passage dim:  torch.Size([23, 2090, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([23, 2090, 1000])
+Span start logits:  torch.Size([23, 2090])
+span start probs dim:  torch.Size([23, 2090])
+Span start representation dim:  torch.Size([23, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([23, 2090]) 23
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 631, 200])
+Passage Length:  631
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 631, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 631, 17])
+Passage ques attention dim:  torch.Size([40, 631, 17])
+Passage question vectors dim:  torch.Size([40, 631, 200])
+Question Passage Similarity dim:  torch.Size([40, 631])
+Question passage attention dim:  torch.Size([40, 631])
+Final Merged Passage dim:  torch.Size([40, 631, 800])
+Modeled Passage dim:  torch.Size([40, 631, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 631, 1000])
+Span start logits:  torch.Size([40, 631])
+span start probs dim:  torch.Size([40, 631])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 631]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1502, 200])
+Passage Length:  1502
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1502, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1502, 14])
+Passage ques attention dim:  torch.Size([40, 1502, 14])
+Passage question vectors dim:  torch.Size([40, 1502, 200])
+Question Passage Similarity dim:  torch.Size([40, 1502])
+Question passage attention dim:  torch.Size([40, 1502])
+Final Merged Passage dim:  torch.Size([40, 1502, 800])
+Modeled Passage dim:  torch.Size([40, 1502, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1502, 1000])
+Span start logits:  torch.Size([40, 1502])
+span start probs dim:  torch.Size([40, 1502])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1502]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 734, 200])
+Passage Length:  734
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 734, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 734, 13])
+Passage ques attention dim:  torch.Size([40, 734, 13])
+Passage question vectors dim:  torch.Size([40, 734, 200])
+Question Passage Similarity dim:  torch.Size([40, 734])
+Question passage attention dim:  torch.Size([40, 734])
+Final Merged Passage dim:  torch.Size([40, 734, 800])
+Modeled Passage dim:  torch.Size([40, 734, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 734, 1000])
+Span start logits:  torch.Size([40, 734])
+span start probs dim:  torch.Size([40, 734])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 734]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 956, 200])
+Passage Length:  956
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 956, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 956, 14])
+Passage ques attention dim:  torch.Size([40, 956, 14])
+Passage question vectors dim:  torch.Size([40, 956, 200])
+Question Passage Similarity dim:  torch.Size([40, 956])
+Question passage attention dim:  torch.Size([40, 956])
+Final Merged Passage dim:  torch.Size([40, 956, 800])
+Modeled Passage dim:  torch.Size([40, 956, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 956, 1000])
+Span start logits:  torch.Size([40, 956])
+span start probs dim:  torch.Size([40, 956])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 956]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 1019, 200])
+Passage Length:  1019
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 1019, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1019, 13])
+Passage ques attention dim:  torch.Size([40, 1019, 13])
+Passage question vectors dim:  torch.Size([40, 1019, 200])
+Question Passage Similarity dim:  torch.Size([40, 1019])
+Question passage attention dim:  torch.Size([40, 1019])
+Final Merged Passage dim:  torch.Size([40, 1019, 800])
+Modeled Passage dim:  torch.Size([40, 1019, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1019, 1000])
+Span start logits:  torch.Size([40, 1019])
+span start probs dim:  torch.Size([40, 1019])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1019]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 1081, 200])
+Passage Length:  1081
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 1081, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1081, 12])
+Passage ques attention dim:  torch.Size([40, 1081, 12])
+Passage question vectors dim:  torch.Size([40, 1081, 200])
+Question Passage Similarity dim:  torch.Size([40, 1081])
+Question passage attention dim:  torch.Size([40, 1081])
+Final Merged Passage dim:  torch.Size([40, 1081, 800])
+Modeled Passage dim:  torch.Size([40, 1081, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1081, 1000])
+Span start logits:  torch.Size([40, 1081])
+span start probs dim:  torch.Size([40, 1081])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1081]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 571, 200])
+Passage Length:  571
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 571, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 571, 17])
+Passage ques attention dim:  torch.Size([40, 571, 17])
+Passage question vectors dim:  torch.Size([40, 571, 200])
+Question Passage Similarity dim:  torch.Size([40, 571])
+Question passage attention dim:  torch.Size([40, 571])
+Final Merged Passage dim:  torch.Size([40, 571, 800])
+Modeled Passage dim:  torch.Size([40, 571, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 571, 1000])
+Span start logits:  torch.Size([40, 571])
+span start probs dim:  torch.Size([40, 571])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 571]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1148, 200])
+Passage Length:  1148
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1148, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1148, 15])
+Passage ques attention dim:  torch.Size([40, 1148, 15])
+Passage question vectors dim:  torch.Size([40, 1148, 200])
+Question Passage Similarity dim:  torch.Size([40, 1148])
+Question passage attention dim:  torch.Size([40, 1148])
+Final Merged Passage dim:  torch.Size([40, 1148, 800])
+Modeled Passage dim:  torch.Size([40, 1148, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1148, 1000])
+Span start logits:  torch.Size([40, 1148])
+span start probs dim:  torch.Size([40, 1148])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1148]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 16, 200])
+Embedded passage dim:  torch.Size([40, 450, 200])
+Passage Length:  450
+Encoded question dim:  torch.Size([40, 16, 200])
+Encoded passage dim:  torch.Size([40, 450, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 450, 16])
+Passage ques attention dim:  torch.Size([40, 450, 16])
+Passage question vectors dim:  torch.Size([40, 450, 200])
+Question Passage Similarity dim:  torch.Size([40, 450])
+Question passage attention dim:  torch.Size([40, 450])
+Final Merged Passage dim:  torch.Size([40, 450, 800])
+Modeled Passage dim:  torch.Size([40, 450, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 450, 1000])
+Span start logits:  torch.Size([40, 450])
+span start probs dim:  torch.Size([40, 450])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 450]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 408, 200])
+Passage Length:  408
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 408, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 408, 15])
+Passage ques attention dim:  torch.Size([40, 408, 15])
+Passage question vectors dim:  torch.Size([40, 408, 200])
+Question Passage Similarity dim:  torch.Size([40, 408])
+Question passage attention dim:  torch.Size([40, 408])
+Final Merged Passage dim:  torch.Size([40, 408, 800])
+Modeled Passage dim:  torch.Size([40, 408, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 408, 1000])
+Span start logits:  torch.Size([40, 408])
+span start probs dim:  torch.Size([40, 408])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 408]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 323, 200])
+Passage Length:  323
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 323, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 323, 14])
+Passage ques attention dim:  torch.Size([40, 323, 14])
+Passage question vectors dim:  torch.Size([40, 323, 200])
+Question Passage Similarity dim:  torch.Size([40, 323])
+Question passage attention dim:  torch.Size([40, 323])
+Final Merged Passage dim:  torch.Size([40, 323, 800])
+Modeled Passage dim:  torch.Size([40, 323, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 323, 1000])
+Span start logits:  torch.Size([40, 323])
+span start probs dim:  torch.Size([40, 323])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 323]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 1129, 200])
+Passage Length:  1129
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 1129, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1129, 12])
+Passage ques attention dim:  torch.Size([40, 1129, 12])
+Passage question vectors dim:  torch.Size([40, 1129, 200])
+Question Passage Similarity dim:  torch.Size([40, 1129])
+Question passage attention dim:  torch.Size([40, 1129])
+Final Merged Passage dim:  torch.Size([40, 1129, 800])
+Modeled Passage dim:  torch.Size([40, 1129, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1129, 1000])
+Span start logits:  torch.Size([40, 1129])
+span start probs dim:  torch.Size([40, 1129])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1129]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 943, 200])
+Passage Length:  943
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 943, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 943, 18])
+Passage ques attention dim:  torch.Size([40, 943, 18])
+Passage question vectors dim:  torch.Size([40, 943, 200])
+Question Passage Similarity dim:  torch.Size([40, 943])
+Question passage attention dim:  torch.Size([40, 943])
+Final Merged Passage dim:  torch.Size([40, 943, 800])
+Modeled Passage dim:  torch.Size([40, 943, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 943, 1000])
+Span start logits:  torch.Size([40, 943])
+span start probs dim:  torch.Size([40, 943])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 943]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 418, 200])
+Passage Length:  418
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 418, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 418, 15])
+Passage ques attention dim:  torch.Size([40, 418, 15])
+Passage question vectors dim:  torch.Size([40, 418, 200])
+Question Passage Similarity dim:  torch.Size([40, 418])
+Question passage attention dim:  torch.Size([40, 418])
+Final Merged Passage dim:  torch.Size([40, 418, 800])
+Modeled Passage dim:  torch.Size([40, 418, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 418, 1000])
+Span start logits:  torch.Size([40, 418])
+span start probs dim:  torch.Size([40, 418])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 418]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1029, 200])
+Passage Length:  1029
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1029, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1029, 15])
+Passage ques attention dim:  torch.Size([40, 1029, 15])
+Passage question vectors dim:  torch.Size([40, 1029, 200])
+Question Passage Similarity dim:  torch.Size([40, 1029])
+Question passage attention dim:  torch.Size([40, 1029])
+Final Merged Passage dim:  torch.Size([40, 1029, 800])
+Modeled Passage dim:  torch.Size([40, 1029, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1029, 1000])
+Span start logits:  torch.Size([40, 1029])
+span start probs dim:  torch.Size([40, 1029])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1029]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 20, 200])
+Embedded passage dim:  torch.Size([40, 1212, 200])
+Passage Length:  1212
+Encoded question dim:  torch.Size([40, 20, 200])
+Encoded passage dim:  torch.Size([40, 1212, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1212, 20])
+Passage ques attention dim:  torch.Size([40, 1212, 20])
+Passage question vectors dim:  torch.Size([40, 1212, 200])
+Question Passage Similarity dim:  torch.Size([40, 1212])
+Question passage attention dim:  torch.Size([40, 1212])
+Final Merged Passage dim:  torch.Size([40, 1212, 800])
+Modeled Passage dim:  torch.Size([40, 1212, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1212, 1000])
+Span start logits:  torch.Size([40, 1212])
+span start probs dim:  torch.Size([40, 1212])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1212]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1364, 200])
+Passage Length:  1364
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1364, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1364, 15])
+Passage ques attention dim:  torch.Size([40, 1364, 15])
+Passage question vectors dim:  torch.Size([40, 1364, 200])
+Question Passage Similarity dim:  torch.Size([40, 1364])
+Question passage attention dim:  torch.Size([40, 1364])
+Final Merged Passage dim:  torch.Size([40, 1364, 800])
+Modeled Passage dim:  torch.Size([40, 1364, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1364, 1000])
+Span start logits:  torch.Size([40, 1364])
+span start probs dim:  torch.Size([40, 1364])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1364]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 18, 200])
+Embedded passage dim:  torch.Size([40, 510, 200])
+Passage Length:  510
+Encoded question dim:  torch.Size([40, 18, 200])
+Encoded passage dim:  torch.Size([40, 510, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 510, 18])
+Passage ques attention dim:  torch.Size([40, 510, 18])
+Passage question vectors dim:  torch.Size([40, 510, 200])
+Question Passage Similarity dim:  torch.Size([40, 510])
+Question passage attention dim:  torch.Size([40, 510])
+Final Merged Passage dim:  torch.Size([40, 510, 800])
+Modeled Passage dim:  torch.Size([40, 510, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 510, 1000])
+Span start logits:  torch.Size([40, 510])
+span start probs dim:  torch.Size([40, 510])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 510]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1816, 200])
+Passage Length:  1816
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1816, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1816, 14])
+Passage ques attention dim:  torch.Size([40, 1816, 14])
+Passage question vectors dim:  torch.Size([40, 1816, 200])
+Question Passage Similarity dim:  torch.Size([40, 1816])
+Question passage attention dim:  torch.Size([40, 1816])
+Final Merged Passage dim:  torch.Size([40, 1816, 800])
+Modeled Passage dim:  torch.Size([40, 1816, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1816, 1000])
+Span start logits:  torch.Size([40, 1816])
+span start probs dim:  torch.Size([40, 1816])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1816]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 797, 200])
+Passage Length:  797
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 797, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 797, 17])
+Passage ques attention dim:  torch.Size([40, 797, 17])
+Passage question vectors dim:  torch.Size([40, 797, 200])
+Question Passage Similarity dim:  torch.Size([40, 797])
+Question passage attention dim:  torch.Size([40, 797])
+Final Merged Passage dim:  torch.Size([40, 797, 800])
+Modeled Passage dim:  torch.Size([40, 797, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 797, 1000])
+Span start logits:  torch.Size([40, 797])
+span start probs dim:  torch.Size([40, 797])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 797]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 11, 200])
+Embedded passage dim:  torch.Size([40, 834, 200])
+Passage Length:  834
+Encoded question dim:  torch.Size([40, 11, 200])
+Encoded passage dim:  torch.Size([40, 834, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 834, 11])
+Passage ques attention dim:  torch.Size([40, 834, 11])
+Passage question vectors dim:  torch.Size([40, 834, 200])
+Question Passage Similarity dim:  torch.Size([40, 834])
+Question passage attention dim:  torch.Size([40, 834])
+Final Merged Passage dim:  torch.Size([40, 834, 800])
+Modeled Passage dim:  torch.Size([40, 834, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 834, 1000])
+Span start logits:  torch.Size([40, 834])
+span start probs dim:  torch.Size([40, 834])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 834]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 20, 200])
+Embedded passage dim:  torch.Size([40, 828, 200])
+Passage Length:  828
+Encoded question dim:  torch.Size([40, 20, 200])
+Encoded passage dim:  torch.Size([40, 828, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 828, 20])
+Passage ques attention dim:  torch.Size([40, 828, 20])
+Passage question vectors dim:  torch.Size([40, 828, 200])
+Question Passage Similarity dim:  torch.Size([40, 828])
+Question passage attention dim:  torch.Size([40, 828])
+Final Merged Passage dim:  torch.Size([40, 828, 800])
+Modeled Passage dim:  torch.Size([40, 828, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 828, 1000])
+Span start logits:  torch.Size([40, 828])
+span start probs dim:  torch.Size([40, 828])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 828]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 373, 200])
+Passage Length:  373
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 373, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 373, 14])
+Passage ques attention dim:  torch.Size([40, 373, 14])
+Passage question vectors dim:  torch.Size([40, 373, 200])
+Question Passage Similarity dim:  torch.Size([40, 373])
+Question passage attention dim:  torch.Size([40, 373])
+Final Merged Passage dim:  torch.Size([40, 373, 800])
+Modeled Passage dim:  torch.Size([40, 373, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 373, 1000])
+Span start logits:  torch.Size([40, 373])
+span start probs dim:  torch.Size([40, 373])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 373]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 242, 200])
+Passage Length:  242
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 242, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 242, 14])
+Passage ques attention dim:  torch.Size([40, 242, 14])
+Passage question vectors dim:  torch.Size([40, 242, 200])
+Question Passage Similarity dim:  torch.Size([40, 242])
+Question passage attention dim:  torch.Size([40, 242])
+Final Merged Passage dim:  torch.Size([40, 242, 800])
+Modeled Passage dim:  torch.Size([40, 242, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 242, 1000])
+Span start logits:  torch.Size([40, 242])
+span start probs dim:  torch.Size([40, 242])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 242]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 438, 200])
+Passage Length:  438
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 438, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 438, 17])
+Passage ques attention dim:  torch.Size([40, 438, 17])
+Passage question vectors dim:  torch.Size([40, 438, 200])
+Question Passage Similarity dim:  torch.Size([40, 438])
+Question passage attention dim:  torch.Size([40, 438])
+Final Merged Passage dim:  torch.Size([40, 438, 800])
+Modeled Passage dim:  torch.Size([40, 438, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 438, 1000])
+Span start logits:  torch.Size([40, 438])
+span start probs dim:  torch.Size([40, 438])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 438]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 1987, 200])
+Passage Length:  1987
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 1987, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1987, 15])
+Passage ques attention dim:  torch.Size([40, 1987, 15])
+Passage question vectors dim:  torch.Size([40, 1987, 200])
+Question Passage Similarity dim:  torch.Size([40, 1987])
+Question passage attention dim:  torch.Size([40, 1987])
+Final Merged Passage dim:  torch.Size([40, 1987, 800])
+Modeled Passage dim:  torch.Size([40, 1987, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1987, 1000])
+Span start logits:  torch.Size([40, 1987])
+span start probs dim:  torch.Size([40, 1987])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1987]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 11, 200])
+Embedded passage dim:  torch.Size([40, 1563, 200])
+Passage Length:  1563
+Encoded question dim:  torch.Size([40, 11, 200])
+Encoded passage dim:  torch.Size([40, 1563, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1563, 11])
+Passage ques attention dim:  torch.Size([40, 1563, 11])
+Passage question vectors dim:  torch.Size([40, 1563, 200])
+Question Passage Similarity dim:  torch.Size([40, 1563])
+Question passage attention dim:  torch.Size([40, 1563])
+Final Merged Passage dim:  torch.Size([40, 1563, 800])
+Modeled Passage dim:  torch.Size([40, 1563, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1563, 1000])
+Span start logits:  torch.Size([40, 1563])
+span start probs dim:  torch.Size([40, 1563])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1563]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 903, 200])
+Passage Length:  903
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 903, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 903, 14])
+Passage ques attention dim:  torch.Size([40, 903, 14])
+Passage question vectors dim:  torch.Size([40, 903, 200])
+Question Passage Similarity dim:  torch.Size([40, 903])
+Question passage attention dim:  torch.Size([40, 903])
+Final Merged Passage dim:  torch.Size([40, 903, 800])
+Modeled Passage dim:  torch.Size([40, 903, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 903, 1000])
+Span start logits:  torch.Size([40, 903])
+span start probs dim:  torch.Size([40, 903])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 903]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 12, 200])
+Embedded passage dim:  torch.Size([40, 333, 200])
+Passage Length:  333
+Encoded question dim:  torch.Size([40, 12, 200])
+Encoded passage dim:  torch.Size([40, 333, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 333, 12])
+Passage ques attention dim:  torch.Size([40, 333, 12])
+Passage question vectors dim:  torch.Size([40, 333, 200])
+Question Passage Similarity dim:  torch.Size([40, 333])
+Question passage attention dim:  torch.Size([40, 333])
+Final Merged Passage dim:  torch.Size([40, 333, 800])
+Modeled Passage dim:  torch.Size([40, 333, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 333, 1000])
+Span start logits:  torch.Size([40, 333])
+span start probs dim:  torch.Size([40, 333])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 333]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 838, 200])
+Passage Length:  838
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 838, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 838, 13])
+Passage ques attention dim:  torch.Size([40, 838, 13])
+Passage question vectors dim:  torch.Size([40, 838, 200])
+Question Passage Similarity dim:  torch.Size([40, 838])
+Question passage attention dim:  torch.Size([40, 838])
+Final Merged Passage dim:  torch.Size([40, 838, 800])
+Modeled Passage dim:  torch.Size([40, 838, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 838, 1000])
+Span start logits:  torch.Size([40, 838])
+span start probs dim:  torch.Size([40, 838])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 838]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 282, 200])
+Passage Length:  282
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 282, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 282, 13])
+Passage ques attention dim:  torch.Size([40, 282, 13])
+Passage question vectors dim:  torch.Size([40, 282, 200])
+Question Passage Similarity dim:  torch.Size([40, 282])
+Question passage attention dim:  torch.Size([40, 282])
+Final Merged Passage dim:  torch.Size([40, 282, 800])
+Modeled Passage dim:  torch.Size([40, 282, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 282, 1000])
+Span start logits:  torch.Size([40, 282])
+span start probs dim:  torch.Size([40, 282])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 282]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1196, 200])
+Passage Length:  1196
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1196, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1196, 14])
+Passage ques attention dim:  torch.Size([40, 1196, 14])
+Passage question vectors dim:  torch.Size([40, 1196, 200])
+Question Passage Similarity dim:  torch.Size([40, 1196])
+Question passage attention dim:  torch.Size([40, 1196])
+Final Merged Passage dim:  torch.Size([40, 1196, 800])
+Modeled Passage dim:  torch.Size([40, 1196, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1196, 1000])
+Span start logits:  torch.Size([40, 1196])
+span start probs dim:  torch.Size([40, 1196])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1196]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 1118, 200])
+Passage Length:  1118
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 1118, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1118, 17])
+Passage ques attention dim:  torch.Size([40, 1118, 17])
+Passage question vectors dim:  torch.Size([40, 1118, 200])
+Question Passage Similarity dim:  torch.Size([40, 1118])
+Question passage attention dim:  torch.Size([40, 1118])
+Final Merged Passage dim:  torch.Size([40, 1118, 800])
+Modeled Passage dim:  torch.Size([40, 1118, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1118, 1000])
+Span start logits:  torch.Size([40, 1118])
+span start probs dim:  torch.Size([40, 1118])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1118]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 608, 200])
+Passage Length:  608
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 608, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 608, 14])
+Passage ques attention dim:  torch.Size([40, 608, 14])
+Passage question vectors dim:  torch.Size([40, 608, 200])
+Question Passage Similarity dim:  torch.Size([40, 608])
+Question passage attention dim:  torch.Size([40, 608])
+Final Merged Passage dim:  torch.Size([40, 608, 800])
+Modeled Passage dim:  torch.Size([40, 608, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 608, 1000])
+Span start logits:  torch.Size([40, 608])
+span start probs dim:  torch.Size([40, 608])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 608]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 517, 200])
+Passage Length:  517
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 517, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 517, 13])
+Passage ques attention dim:  torch.Size([40, 517, 13])
+Passage question vectors dim:  torch.Size([40, 517, 200])
+Question Passage Similarity dim:  torch.Size([40, 517])
+Question passage attention dim:  torch.Size([40, 517])
+Final Merged Passage dim:  torch.Size([40, 517, 800])
+Modeled Passage dim:  torch.Size([40, 517, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 517, 1000])
+Span start logits:  torch.Size([40, 517])
+span start probs dim:  torch.Size([40, 517])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 517]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 937, 200])
+Passage Length:  937
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 937, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 937, 14])
+Passage ques attention dim:  torch.Size([40, 937, 14])
+Passage question vectors dim:  torch.Size([40, 937, 200])
+Question Passage Similarity dim:  torch.Size([40, 937])
+Question passage attention dim:  torch.Size([40, 937])
+Final Merged Passage dim:  torch.Size([40, 937, 800])
+Modeled Passage dim:  torch.Size([40, 937, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 937, 1000])
+Span start logits:  torch.Size([40, 937])
+span start probs dim:  torch.Size([40, 937])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 937]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1192, 200])
+Passage Length:  1192
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1192, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1192, 14])
+Passage ques attention dim:  torch.Size([40, 1192, 14])
+Passage question vectors dim:  torch.Size([40, 1192, 200])
+Question Passage Similarity dim:  torch.Size([40, 1192])
+Question passage attention dim:  torch.Size([40, 1192])
+Final Merged Passage dim:  torch.Size([40, 1192, 800])
+Modeled Passage dim:  torch.Size([40, 1192, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1192, 1000])
+Span start logits:  torch.Size([40, 1192])
+span start probs dim:  torch.Size([40, 1192])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1192]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 455, 200])
+Passage Length:  455
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 455, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 455, 14])
+Passage ques attention dim:  torch.Size([40, 455, 14])
+Passage question vectors dim:  torch.Size([40, 455, 200])
+Question Passage Similarity dim:  torch.Size([40, 455])
+Question passage attention dim:  torch.Size([40, 455])
+Final Merged Passage dim:  torch.Size([40, 455, 800])
+Modeled Passage dim:  torch.Size([40, 455, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 455, 1000])
+Span start logits:  torch.Size([40, 455])
+span start probs dim:  torch.Size([40, 455])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 455]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 15, 200])
+Embedded passage dim:  torch.Size([40, 786, 200])
+Passage Length:  786
+Encoded question dim:  torch.Size([40, 15, 200])
+Encoded passage dim:  torch.Size([40, 786, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 786, 15])
+Passage ques attention dim:  torch.Size([40, 786, 15])
+Passage question vectors dim:  torch.Size([40, 786, 200])
+Question Passage Similarity dim:  torch.Size([40, 786])
+Question passage attention dim:  torch.Size([40, 786])
+Final Merged Passage dim:  torch.Size([40, 786, 800])
+Modeled Passage dim:  torch.Size([40, 786, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 786, 1000])
+Span start logits:  torch.Size([40, 786])
+span start probs dim:  torch.Size([40, 786])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 786]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 13, 200])
+Embedded passage dim:  torch.Size([40, 538, 200])
+Passage Length:  538
+Encoded question dim:  torch.Size([40, 13, 200])
+Encoded passage dim:  torch.Size([40, 538, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 538, 13])
+Passage ques attention dim:  torch.Size([40, 538, 13])
+Passage question vectors dim:  torch.Size([40, 538, 200])
+Question Passage Similarity dim:  torch.Size([40, 538])
+Question passage attention dim:  torch.Size([40, 538])
+Final Merged Passage dim:  torch.Size([40, 538, 800])
+Modeled Passage dim:  torch.Size([40, 538, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 538, 1000])
+Span start logits:  torch.Size([40, 538])
+span start probs dim:  torch.Size([40, 538])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 538]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 1475, 200])
+Passage Length:  1475
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 1475, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1475, 17])
+Passage ques attention dim:  torch.Size([40, 1475, 17])
+Passage question vectors dim:  torch.Size([40, 1475, 200])
+Question Passage Similarity dim:  torch.Size([40, 1475])
+Question passage attention dim:  torch.Size([40, 1475])
+Final Merged Passage dim:  torch.Size([40, 1475, 800])
+Modeled Passage dim:  torch.Size([40, 1475, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1475, 1000])
+Span start logits:  torch.Size([40, 1475])
+span start probs dim:  torch.Size([40, 1475])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1475]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 14, 200])
+Embedded passage dim:  torch.Size([40, 1685, 200])
+Passage Length:  1685
+Encoded question dim:  torch.Size([40, 14, 200])
+Encoded passage dim:  torch.Size([40, 1685, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 1685, 14])
+Passage ques attention dim:  torch.Size([40, 1685, 14])
+Passage question vectors dim:  torch.Size([40, 1685, 200])
+Question Passage Similarity dim:  torch.Size([40, 1685])
+Question passage attention dim:  torch.Size([40, 1685])
+Final Merged Passage dim:  torch.Size([40, 1685, 800])
+Modeled Passage dim:  torch.Size([40, 1685, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 1685, 1000])
+Span start logits:  torch.Size([40, 1685])
+span start probs dim:  torch.Size([40, 1685])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 1685]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 261, 200])
+Passage Length:  261
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 261, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 261, 17])
+Passage ques attention dim:  torch.Size([40, 261, 17])
+Passage question vectors dim:  torch.Size([40, 261, 200])
+Question Passage Similarity dim:  torch.Size([40, 261])
+Question passage attention dim:  torch.Size([40, 261])
+Final Merged Passage dim:  torch.Size([40, 261, 800])
+Modeled Passage dim:  torch.Size([40, 261, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 261, 1000])
+Span start logits:  torch.Size([40, 261])
+span start probs dim:  torch.Size([40, 261])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 261]) 40
+METADATA: 
+Embedded question dim:  torch.Size([40, 17, 200])
+Embedded passage dim:  torch.Size([40, 775, 200])
+Passage Length:  775
+Encoded question dim:  torch.Size([40, 17, 200])
+Encoded passage dim:  torch.Size([40, 775, 200])
+Encoding dim:  200
+passage ques similarity dim:  torch.Size([40, 775, 17])
+Passage ques attention dim:  torch.Size([40, 775, 17])
+Passage question vectors dim:  torch.Size([40, 775, 200])
+Question Passage Similarity dim:  torch.Size([40, 775])
+Question passage attention dim:  torch.Size([40, 775])
+Final Merged Passage dim:  torch.Size([40, 775, 800])
+Modeled Passage dim:  torch.Size([40, 775, 200])
+Modeling dim:  200
+Span start input shape:  torch.Size([40, 775, 1000])
+Span start logits:  torch.Size([40, 775])
+span start probs dim:  torch.Size([40, 775])
+Span start representation dim:  torch.Size([40, 200])
+In dump logits!
+<class 'torch.autograd.variable.Variable'> torch.Size([40, 775]) 40

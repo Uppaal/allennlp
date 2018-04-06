@@ -36,6 +36,9 @@ from allennlp.training.learning_rate_schedulers import LearningRateScheduler
 from allennlp.training.optimizers import Optimizer
 logger = logging.getLogger(__name__)  # pylint: disable=invalid-name
 
+##
+from allennlp.models.archival import archive_model, CONFIG_NAME
+
 
 def is_sparse(tensor):
     return tensor.data.is_sparse
@@ -641,6 +644,7 @@ class Trainer:
         return val_loss, batches_this_epoch
 
     def train(self) -> Dict[str, Any]:
+
         """
         Trains the supplied model with the supplied parameters.
         """
@@ -704,6 +708,7 @@ class Trainer:
                 logger.info("Estimated training time remaining: %s", formatted_time)
 
             epochs_trained += 1
+            archive_model(self._serialization_dir, files_to_archive={})
 
         training_elapsed_time = time.time() - training_start_time
         metrics = {

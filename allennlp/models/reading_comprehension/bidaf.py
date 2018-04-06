@@ -2,6 +2,9 @@ import logging
 from typing import Any, Dict, List, Optional
 
 import torch
+import json
+import numpy as np
+import os
 from torch.autograd import Variable
 from torch.nn.functional import nll_loss
 
@@ -71,6 +74,7 @@ class BidirectionalAttentionFlow(Model):
                  attention_similarity_function: SimilarityFunction,
                  modeling_layer: Seq2SeqEncoder,
                  span_end_encoder: Seq2SeqEncoder,
+                 total_items = 0,
                  dropout: float = 0.2,
                  mask_lstms: bool = True,
                  initializer: InitializerApplicator = InitializerApplicator(),
@@ -113,6 +117,10 @@ class BidirectionalAttentionFlow(Model):
             self._dropout = lambda x: x
         self._mask_lstms = mask_lstms
 
+        self.saved_batch_count = 0
+        self.current_batch_count = 0
+        self.total_items = total_items
+        self.epoch = 0
         initializer(self)
 
     def forward(self,  # type: ignore
@@ -170,25 +178,36 @@ class BidirectionalAttentionFlow(Model):
             string from the original passage that the model thinks is the best answer to the
             question.
         """
+        print("METADATA: ")
+
         embedded_question = self._highway_layer(self._text_field_embedder(question))
+        print("Embedded question dim: ", embedded_question.shape)
         embedded_passage = self._highway_layer(self._text_field_embedder(passage))
+        print("Embedded passage dim: ", embedded_passage.shape)
         batch_size = embedded_question.size(0)
         passage_length = embedded_passage.size(1)
+        print("Passage Length: ", passage_length)
         question_mask = util.get_text_field_mask(question).float()
         passage_mask = util.get_text_field_mask(passage).float()
         question_lstm_mask = question_mask if self._mask_lstms else None
         passage_lstm_mask = passage_mask if self._mask_lstms else None
 
         encoded_question = self._dropout(self._phrase_layer(embedded_question, question_lstm_mask))
+        print("Encoded question dim: ", encoded_question.shape)
         encoded_passage = self._dropout(self._phrase_layer(embedded_passage, passage_lstm_mask))
+        print("Encoded passage dim: ", encoded_passage.shape)
         encoding_dim = encoded_question.size(-1)
+        print("Encoding dim: ", encoding_dim)
 
         # Shape: (batch_size, passage_length, question_length)
         passage_question_similarity = self._matrix_attention(encoded_passage, encoded_question)
+        print("passage ques similarity dim: ", passage_question_similarity.shape)
         # Shape: (batch_size, passage_length, question_length)
         passage_question_attention = util.last_dim_softmax(passage_question_similarity, question_mask)
+        print("Passage ques attention dim: ", passage_question_attention.shape)
         # Shape: (batch_size, passage_length, encoding_dim)
         passage_question_vectors = util.weighted_sum(encoded_question, passage_question_attention)
+        print("Passage question vectors dim: ", passage_question_vectors.shape)
 
         # We replace masked values with something really negative here, so they don't affect the
         # max below.
@@ -197,8 +216,10 @@ class BidirectionalAttentionFlow(Model):
                                                        -1e7)
         # Shape: (batch_size, passage_length)
         question_passage_similarity = masked_similarity.max(dim=-1)[0].squeeze(-1)
+        print("Question Passage Similarity dim: ", question_passage_similarity.shape)
         # Shape: (batch_size, passage_length)
         question_passage_attention = util.masked_softmax(question_passage_similarity, passage_mask)
+        print("Question passage attention dim: ", question_passage_attention.shape)
         # Shape: (batch_size, encoding_dim)
         question_passage_vector = util.weighted_sum(encoded_passage, question_passage_attention)
         # Shape: (batch_size, passage_length, encoding_dim)
@@ -212,19 +233,23 @@ class BidirectionalAttentionFlow(Model):
                                           encoded_passage * passage_question_vectors,
                                           encoded_passage * tiled_question_passage_vector],
                                          dim=-1)
-
+        print("Final Merged Passage dim: ", final_merged_passage.shape)
         modeled_passage = self._dropout(self._modeling_layer(final_merged_passage, passage_lstm_mask))
+        print("Modeled Passage dim: ",modeled_passage.shape)
         modeling_dim = modeled_passage.size(-1)
-
+        print("Modeling dim: ", modeling_dim)
         # Shape: (batch_size, passage_length, encoding_dim * 4 + modeling_dim))
         span_start_input = self._dropout(torch.cat([final_merged_passage, modeled_passage], dim=-1))
+        print("Span start input shape: ", span_start_input.shape)
         # Shape: (batch_size, passage_length)
         span_start_logits = self._span_start_predictor(span_start_input).squeeze(-1)
+        print("Span start logits: ", span_start_logits.shape)
         # Shape: (batch_size, passage_length)
         span_start_probs = util.masked_softmax(span_start_logits, passage_mask)
-
+        print("span start probs dim: ", span_start_probs.shape)
         # Shape: (batch_size, modeling_dim)
         span_start_representation = util.weighted_sum(modeled_passage, span_start_probs)
+        print("Span start representation dim: ", span_start_representation.shape)
         # Shape: (batch_size, passage_length, modeling_dim)
         tiled_start_representation = span_start_representation.unsqueeze(1).expand(batch_size,
                                                                                    passage_length,
@@ -255,6 +280,12 @@ class BidirectionalAttentionFlow(Model):
                 "span_end_probs": span_end_probs,
                 "best_span": best_span,
                 }
+        # print(output_dict)
+        # print(torch.shape(span_start_logits))
+        # print(len(metadata))
+        if self.training == False:
+            self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
+
         if span_start is not None:
             loss = nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
             self._span_start_accuracy(span_start_logits, span_start.squeeze(-1))
@@ -282,6 +313,52 @@ class BidirectionalAttentionFlow(Model):
             output_dict['question_tokens'] = question_tokens
             output_dict['passage_tokens'] = passage_tokens
         return output_dict
+
+    def dump_logits(self, metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs):
+        print("In dump logits!")
+        limit = 1000
+        #limit = 5
+        eval_per_epoch = "eval_per_epoch"
+        if not os.path.isdir(eval_per_epoch):
+            os.makedirs(eval_per_epoch)
+        epoch_dir = eval_per_epoch+"/"+str(self.epoch)
+        if not os.path.isdir(epoch_dir):
+            os.makedirs(epoch_dir)
+        filename = epoch_dir+"/logits.json"
+        if self.current_batch_count > limit:
+            filename = epoch_dir+"/logits_" + str(self.saved_batch_count) + ".json"
+            self.current_batch_count = 0
+
+        file = open(filename, 'a')
+        print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
+        # print(torch.shape(span_start_logits.data))
+        span_start_logits_data = np.array(span_start_logits.data).tolist()
+        # span_start_probs_data = np.asarray(span_start_probs.data).tolist()
+        span_end_logits_data = np.array(span_end_logits.data).tolist()
+        # span_end_probs_data = np.asarray(span_end_probs.data).tolist()
+
+        jsonObjectList = []
+
+        i = 0
+        for metadatum in metadata:
+            jsonObject = {}
+            jsonObject['id'] = metadatum['id']
+            jsonObject['span_start_logits'] = span_start_logits_data[i]
+            # jsonObject['span_start_probs'] = span_start_probs_data[i]
+            jsonObject['span_end_logits'] = span_end_logits_data[i]
+            # jsonObject['span_end_probs'] = span_end_probs_data
+            jsonObjectList.append(jsonObject)
+            i+=1
+        json.dump(jsonObjectList, file)
+
+        self.saved_batch_count += len(metadata)
+        self.current_batch_count += len(metadata)
+        if self.total_items == 0:
+            self.total_items = limit
+        if self.saved_batch_count >= self.total_items:
+            self.saved_batch_count = 0
+            self.epoch += 1
+        file.close()
 
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
         exact_match, f1_score = self._squad_metrics.get_metric(reset)
@@ -336,6 +413,7 @@ class BidirectionalAttentionFlow(Model):
         regularizer = RegularizerApplicator.from_params(params.pop('regularizer', []))
 
         mask_lstms = params.pop_bool('mask_lstms', True)
+        total_items = params.pop_int('total_items', 0)
         params.assert_empty(cls.__name__)
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
@@ -347,4 +425,4 @@ class BidirectionalAttentionFlow(Model):
                    dropout=dropout,
                    mask_lstms=mask_lstms,
                    initializer=initializer,
-                   regularizer=regularizer)
+                   regularizer=regularizer, total_items=total_items)
