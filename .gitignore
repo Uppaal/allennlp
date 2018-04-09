@@ -14,3 +14,7 @@ allennlp.egg-info/
 build/
 dist/
 .mypy_cache
+Experiments/
+np3/
+run.sh
+outputs/
