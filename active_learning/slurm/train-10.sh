@@ -25,5 +25,5 @@ pip install  --user http://download.pytorch.org/whl/cu90/torch-0.3.1-cp36-cp36m-
 ## Change this line so that it points to your bidaf github folder
 cd /home/usaxena/work/s18/696/allennlp/active_learning
 
-python make_data.py --percent 10 --gpu 1 --source_logits_file "data/train-logits.p" --source_file "data/newsqa/train_dump.json" --target_file "data/newsqa/softm_top_train_dump_10.json"
+python process_logits.py --percent 10 --gpu 1 --source_logits_file "data/squad-train-logits.p" --source_file "data/squad/train-v1.1.json" --target_file "data/al_squad/logits_top_train_dump_10.json"
 
