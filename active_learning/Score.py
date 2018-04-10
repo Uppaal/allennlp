@@ -1,7 +1,7 @@
 import numpy as np
 import torch
 
-from active_learning import LogitsScore, SoftmaxScore
+import LogitsScore, SoftmaxScore
 
 
 def score_all_using_logits(start, end, dtype):
@@ -36,7 +36,7 @@ def score_all(start, end):
 
 
 def score_top(start, end, top=1):
-    required_len = int(top * len(start) / 100.0)
+    required_len = int(int(top) * len(start) / 100)
     # print("Taking {} scores out of {}".format(required_len, len(start)))
 
     start = sorted(start)

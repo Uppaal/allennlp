@@ -4,7 +4,7 @@ import pickle
 
 
 def combine_logits_from_file():
-    directory = "data/dev_small_eval_per_epoch"
+    directory = "data/squad_eval_per_epoch"
     final = []
     for subdir, dirs, files in os.walk(directory):
         for filename in files:
@@ -21,7 +21,7 @@ def combine_logits_from_file():
                     df = pd.read_json(ele)
                     final.append(df)
     result = pd.concat(final)
-    f = open('data/combined_logits.p', 'wb')
+    f = open('data/squad_train_logits.p', 'wb')
     pickle.dump(result, f)
 
 
