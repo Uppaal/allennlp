@@ -29,7 +29,7 @@ def get_args():
     Use 0 for logits
     Use 1 for softmax
     '''
-    parser.add_argument("--score-type", default=2)
+    parser.add_argument("--score-type", default=0)
     parser.add_argument("--k", default=2)
 
     return parser.parse_args()
@@ -143,6 +143,6 @@ def create_candidate_spans():
 
 
 if __name__ == "__main__":
-    #main()
-    create_candidate_spans()
+    main()
+    # create_candidate_spans()
     # args = get_args()
