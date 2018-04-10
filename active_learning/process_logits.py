@@ -6,8 +6,8 @@ from functools import reduce
 import pandas as pd
 import torch
 
-from active_learning import LogitsScore, SoftmaxScore, Score
-from active_learning.process_candidate_answers import process_saved_file
+import LogitsScore, SoftmaxScore, Score
+from process_candidate_answers import process_saved_file
 
 
 def get_args():
@@ -71,7 +71,7 @@ def process(args, score_type):
     sorted_values = score_df.sort_values('entropy')
     # print(sorted_values)
 
-    num_top_values = int(args.percent * len(sorted_values) / 100)
+    num_top_values = int(int(args.percent) * len(sorted_values) / 100)
     # print(idx)
 
     top_ids = sorted_values[:num_top_values]
@@ -143,6 +143,6 @@ def create_candidate_spans():
 
 
 if __name__ == "__main__":
-    main()
-    # create_candidate_spans()
+    #main()
+    create_candidate_spans()
     # args = get_args()
