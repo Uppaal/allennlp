@@ -142,8 +142,9 @@ def datasets_from_params(params: Params) -> Dict[str, Iterable[Instance]]:
         validation_and_test_dataset_reader = DatasetReader.from_params(validation_dataset_reader_params)
 
     train_data_path = params.pop('train_data_path')
+    train_data_path_target = params.pop('train_data_path_target')
     logger.info("Reading training data from %s", train_data_path)
-    train_data = dataset_reader.read(train_data_path)
+    train_data = dataset_reader.read(train_data_path,train_data_path_target)
 
     datasets: Dict[str, Iterable[Instance]] = {"train": train_data}
 
@@ -256,6 +257,7 @@ def train_model(params: Params,
 
     all_datasets = datasets_from_params(params)
     datasets_for_vocab_creation = set(params.pop("datasets_for_vocab_creation", all_datasets))
+    print(datasets_for_vocab_creation)
 
     for dataset in datasets_for_vocab_creation:
         if dataset not in all_datasets:

@@ -7,6 +7,7 @@ import numpy as np
 import os
 from torch.autograd import Variable
 from torch.nn.functional import nll_loss
+import torch.nn as nn
 
 from allennlp.common import Params
 from allennlp.common.checks import check_dimensions_match
@@ -97,6 +98,9 @@ class BidirectionalAttentionFlow(Model):
         span_end_encoding_dim = span_end_encoder.get_output_dim()
         span_end_input_dim = encoding_dim * 4 + span_end_encoding_dim
         self._span_end_predictor = TimeDistributed(torch.nn.Linear(span_end_input_dim, 1))
+
+        ####################### Discriminator #####################
+        self.Discriminator_layer = nn.LSTM(encoding_dim,encoding_dim*2)
 
         # Bidaf has lots of layer dimensions which need to match up - these aren't necessarily
         # obvious from the configuration files, so we check here.
@@ -198,6 +202,19 @@ class BidirectionalAttentionFlow(Model):
         print("Encoded passage dim: ", encoded_passage.shape)
         encoding_dim = encoded_question.size(-1)
         print("Encoding dim: ", encoding_dim)
+
+        #############################################################################################
+        ############### Begin Discriminator part ###############################
+        #############################################################################################
+        disc_output = torch.cat([encoded_passage, encoded_question], dim =1)
+        # print("Discriminator input size: ", disc_output.shape())
+        new_out, hidden_disc = self.Discriminator_layer(disc_output)
+        print("bla")
+        print("Discriminator output size: ", new_out.shape)
+        print("Discriminator hidden size: ", hidden_disc[0].shape, hidden_disc[1].shape)
+        #############################################################################################
+        ########################  END #############################
+        #############################################################################################
 
         # Shape: (batch_size, passage_length, question_length)
         passage_question_similarity = self._matrix_attention(encoded_passage, encoded_question)

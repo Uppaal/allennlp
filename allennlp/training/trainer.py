@@ -425,6 +425,12 @@ class Trainer:
 
         logger.info("Training")
         for batch in train_generator_tqdm:
+            print(batch['span_start'])
+            # print(batch['metadata'])
+            print(len(batch['metadata']))
+            for diter in range(len(batch['metadata'])):
+                print(batch['metadata'][diter]['domain'])
+                # print(batch['span_start'].keys())
             batches_this_epoch += 1
             self._batch_num_total += 1
             batch_num_total = self._batch_num_total

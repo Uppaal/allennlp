@@ -139,7 +139,8 @@ def make_reading_comprehension_instance(question_tokens: List[Token],
                                         passage_text: str,
                                         token_spans: List[Tuple[int, int]] = None,
                                         answer_texts: List[str] = None,
-                                        additional_metadata: Dict[str, Any] = None) -> Instance:
+                                        additional_metadata: Dict[str, Any] = None,
+                                        data_type: float = 3.0) -> Instance:
     """
     Converts a question, a passage, and an optional answer (or answers) to an ``Instance`` for use
     in a reading comprehension model.
@@ -192,6 +193,7 @@ def make_reading_comprehension_instance(question_tokens: List[Token],
             'token_offsets': passage_offsets,
             'question_tokens': [token.text for token in question_tokens],
             'passage_tokens': [token.text for token in passage_tokens],
+            'domain': data_type,
             }
     if answer_texts:
         metadata['answer_texts'] = answer_texts
@@ -212,4 +214,5 @@ def make_reading_comprehension_instance(question_tokens: List[Token],
 
     metadata.update(additional_metadata)
     fields['metadata'] = MetadataField(metadata)
+    # fields['domain'] = data_type
     return Instance(fields)

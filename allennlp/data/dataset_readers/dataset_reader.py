@@ -42,7 +42,7 @@ class DatasetReader(Registrable):
     def __init__(self, lazy: bool = False) -> None:
         self.lazy = lazy
 
-    def read(self, file_path: str) -> Iterable[Instance]:
+    def read(self, file_path: str, file_path_target: str = "") -> Iterable[Instance]:
         """
         Returns an ``Iterable`` containing all the instances
         in the specified dataset.
@@ -68,7 +68,7 @@ class DatasetReader(Registrable):
         if lazy:
             return _LazyInstances(lambda: iter(self._read(file_path)))
         else:
-            instances = self._read(file_path)
+            instances = self._read(file_path,file_path_target)
             if not isinstance(instances, list):
                 instances = [instance for instance in Tqdm.tqdm(instances)]
                 print(len(instances))
@@ -77,7 +77,7 @@ class DatasetReader(Registrable):
                                          "Is the path correct?".format(file_path))
             return instances
 
-    def _read(self, file_path: str) -> Iterable[Instance]:
+    def _read(self, file_path: str, file_path_target: str = "") -> Iterable[Instance]:
         """
         Reads the instances from the given file_path and returns them as an
         `Iterable` (which could be a list or could be a generator).

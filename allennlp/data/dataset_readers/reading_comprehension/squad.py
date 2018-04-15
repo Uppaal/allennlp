@@ -45,7 +45,7 @@ class SquadReader(DatasetReader):
         self._token_indexers = token_indexers or {'tokens': SingleIdTokenIndexer()}
 
     @overrides
-    def _read(self, file_path: str):
+    def _read(self, file_path: str, target_file_path: str = ""):
         # if `file_path` is a URL, redirect to the cache
         file_path = cached_path(file_path)
 
@@ -53,6 +53,7 @@ class SquadReader(DatasetReader):
         with open(file_path) as dataset_file:
             dataset_json = json.load(dataset_file)
             dataset = dataset_json['data']
+            version = dataset_json['version']
         logger.info("Reading the dataset")
         count = 0
         for article in dataset:
@@ -74,12 +75,49 @@ class SquadReader(DatasetReader):
                                                      id,
                                                      zip(span_starts, span_ends),
                                                      answer_texts,
-                                                     tokenized_paragraph)
+                                                     tokenized_paragraph,
+                                                     version)
                     except IndexError:
                         # print("Index Error")
                         count+=1
                         continue
                     yield instance
+        ################################################################
+        if target_file_path:
+            target_file_path = cached_path(target_file_path)
+            with open(target_file_path) as dataset_file:
+                dataset_json = json.load(dataset_file)
+                dataset = dataset_json['data']
+                version = dataset_json['version']
+            logger.info("Reading the dataset")
+            count = 0
+            for article in dataset:
+                for paragraph_json in article['paragraphs']:
+                    paragraph = paragraph_json["context"]
+                    tokenized_paragraph = self._tokenizer.tokenize(paragraph)
+
+
+                    for question_answer in paragraph_json['qas']:
+                        question_text = question_answer["question"].strip().replace("\n", "")
+                        answer_texts = [answer['text'] for answer in question_answer['answers']]
+                        id = question_answer['id']
+                        span_starts = [answer['answer_start'] for answer in question_answer['answers']]
+                        span_ends = [start + len(answer) for start, answer in zip(span_starts, answer_texts)]
+                        # data_type = version
+
+                        try:
+                            instance = self.text_to_instance(question_text,
+                                                         paragraph,
+                                                         id,
+                                                         zip(span_starts, span_ends),
+                                                         answer_texts,
+                                                         tokenized_paragraph,
+                                                         version)
+                        except IndexError:
+                            # print("Index Error")
+                            count+=1
+                            continue
+                        yield instance
         print(count)
 
     @overrides
@@ -89,7 +127,7 @@ class SquadReader(DatasetReader):
                          id: str,
                          char_spans: List[Tuple[int, int]] = None,
                          answer_texts: List[str] = None,
-                         passage_tokens: List[Token] = None) -> Instance:
+                         passage_tokens: List[Token] = None, data_type: float = 2.0) -> Instance:
         # pylint: disable=arguments-differ
         if not passage_tokens:
             passage_tokens = self._tokenizer.tokenize(passage_text)
@@ -120,7 +158,7 @@ class SquadReader(DatasetReader):
                                                         self._token_indexers,
                                                         passage_text,
                                                         token_spans,
-                                                        answer_texts, additional_metadata)
+                                                        answer_texts, additional_metadata, data_type)
 
     @classmethod
     def from_params(cls, params: Params) -> 'SquadReader':
