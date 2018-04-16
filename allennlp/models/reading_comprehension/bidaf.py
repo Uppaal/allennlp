@@ -101,6 +101,10 @@ class BidirectionalAttentionFlow(Model):
 
         ####################### Discriminator #####################
         self.Discriminator_layer = nn.LSTM(encoding_dim,encoding_dim*2)
+        self.MLPDiscriminator = nn.Linear(encoding_dim*2,1)
+        self.SigmoidDiscriminator = nn.Sigmoid()
+        self.DiscriminatorCriterion = nn.MSELoss()
+        ###########################################################
 
         # Bidaf has lots of layer dimensions which need to match up - these aren't necessarily
         # obvious from the configuration files, so we check here.
@@ -132,7 +136,8 @@ class BidirectionalAttentionFlow(Model):
                 passage: Dict[str, torch.LongTensor],
                 span_start: torch.IntTensor = None,
                 span_end: torch.IntTensor = None,
-                metadata: List[Dict[str, Any]] = None) -> Dict[str, torch.Tensor]:
+                metadata: List[Dict[str, Any]] = None,
+                train_mode: int = 0) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         """
         Parameters
@@ -158,6 +163,9 @@ class BidirectionalAttentionFlow(Model):
             should be the batch size, and each dictionary should have the keys ``id``,
             ``original_passage``, and ``token_offsets``.  If you only want the best span string and
             don't care about official metrics, you can omit the ``id`` key.
+        train_mode : ``int``, Recommended
+            This tells us what loss to backpropagate as we need to alternate between domain
+            classifier and the bidaf model.
 
         Returns
         -------
@@ -183,6 +191,7 @@ class BidirectionalAttentionFlow(Model):
             question.
         """
         print("METADATA: ")
+        print("Train Mode: ", train_mode)
 
         embedded_question = self._highway_layer(self._text_field_embedder(question))
         print("Embedded question dim: ", embedded_question.shape)
@@ -207,10 +216,13 @@ class BidirectionalAttentionFlow(Model):
         ############### Begin Discriminator part ###############################
         #############################################################################################
         disc_output = torch.cat([encoded_passage, encoded_question], dim =1)
+        # print(domain_info)
         # print("Discriminator input size: ", disc_output.shape())
         new_out, hidden_disc = self.Discriminator_layer(disc_output)
+        new_out = self.MLPDiscriminator(torch.index_select(new_out,1,Variable(torch.LongTensor([new_out.shape[1]-1]))).squeeze())
+        new_out = self.SigmoidDiscriminator(new_out)
         print("bla")
-        print("Discriminator output size: ", new_out.shape)
+        print("Discriminator output size: ", new_out.shape, new_out)
         print("Discriminator hidden size: ", hidden_disc[0].shape, hidden_disc[1].shape)
         #############################################################################################
         ########################  END #############################
@@ -300,16 +312,50 @@ class BidirectionalAttentionFlow(Model):
         # print(output_dict)
         # print(torch.shape(span_start_logits))
         # print(len(metadata))
+
+        ##################################### Masking based on target and source ##########################
+        domain_info = torch.FloatTensor([metadata[i]['domain'] for i in range(len(metadata))])
+        domain_indices = torch.LongTensor([i for i in range(len(metadata))])
+        domain_mask = domain_info > 0.5
+        domain_indices = domain_indices[domain_mask]
+        print(domain_info)
+        ###################################################################################################
+
         if self.training == False:
             self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
 
-        if span_start is not None:
-            loss = nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
+        ### Deal with losses
+        loss = -1
+        print("Initial loss type",span_start,domain_indices,train_mode )
+
+        ## Discriminator Loss
+        if train_mode == 0:
+            loss = self.DiscriminatorCriterion(new_out,Variable(torch.ones(domain_info.shape)-domain_info))
+        else:
+            pass
+        ## Model loss
+        if span_start is not None and len(domain_indices)>0 and train_mode == 0:
+            ###################################################################################################
+            print("inside")
+            span_start_logits = torch.index_select(span_start_logits, 0, Variable(domain_indices))
+            print(span_start_logits)
+            span_end_logits = torch.index_select(span_end_logits, 0, Variable(domain_indices))
+            span_start = torch.index_select(span_start, 0, Variable(domain_indices))
+            span_end = torch.index_select(span_end, 0, Variable(domain_indices))
+            passage_mask = torch.index_select(passage_mask, 0, Variable(domain_indices))
+            best_span_loss = torch.index_select(best_span, 0, Variable(domain_indices))
+            print(type(domain_mask), domain_mask, domain_indices)
+            print(span_end, span_start)
+            print("passage mask", passage_mask)
+            ###################################################################################################
+            loss += nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
             self._span_start_accuracy(span_start_logits, span_start.squeeze(-1))
             loss += nll_loss(util.masked_log_softmax(span_end_logits, passage_mask), span_end.squeeze(-1))
             self._span_end_accuracy(span_end_logits, span_end.squeeze(-1))
-            self._span_accuracy(best_span, torch.stack([span_start, span_end], -1))
-            output_dict["loss"] = loss
+            self._span_accuracy(best_span_loss, torch.stack([span_start, span_end], -1))
+
+
+
         if metadata is not None:
             output_dict['best_span_str'] = []
             question_tokens = []
@@ -329,6 +375,8 @@ class BidirectionalAttentionFlow(Model):
                     self._squad_metrics(best_span_string, answer_texts)
             output_dict['question_tokens'] = question_tokens
             output_dict['passage_tokens'] = passage_tokens
+
+        output_dict["loss"] = loss
         return output_dict
 
     def dump_logits(self, metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs):

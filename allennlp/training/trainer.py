@@ -14,6 +14,7 @@ import time
 import re
 import datetime
 import traceback
+import random
 from typing import Dict, Optional, List, Tuple, Union, Iterable, Any, Set
 
 import torch
@@ -397,6 +398,12 @@ class Trainer:
         """
         Trains one epoch and returns metrics.
         """
+        ############################################################################################
+        ########################## Extra code ######################################################
+        ############################################################################################
+        dvsg_ratio = 0.5
+        ############################################################################################
+        ############################################################################################
         logger.info("Epoch %d/%d", epoch, self._num_epochs - 1)
         logger.info(f"Peak CPU memory usage MB: {peak_memory_mb()}")
         for gpu, memory in gpu_memory_mb().items():
@@ -425,12 +432,16 @@ class Trainer:
 
         logger.info("Training")
         for batch in train_generator_tqdm:
+
+            ### Print statements
             print(batch['span_start'])
             # print(batch['metadata'])
             print(len(batch['metadata']))
             for diter in range(len(batch['metadata'])):
                 print(batch['metadata'][diter]['domain'])
                 # print(batch['span_start'].keys())
+
+            ###  Logging Info
             batches_this_epoch += 1
             self._batch_num_total += 1
             batch_num_total = self._batch_num_total
@@ -438,11 +449,23 @@ class Trainer:
             self._log_histograms_this_batch = self._histogram_interval is not None and (
                     batch_num_total % self._histogram_interval == 0)
 
+
+            ### Optimizer Selection
             self._optimizer.zero_grad()
 
-            loss = self._batch_loss(batch, for_training=True)
+            ### Loss calculation
+            rand_train = random.random()
+            if rand_train<dvsg_ratio:
+                batch['train_mode'] = 0
+                loss = self._batch_loss(batch, for_training=True)
+                print(type(loss))
+            else:
+                batch['train_mode'] = 0
+                loss = self._batch_loss(batch, for_training=True)
+            # if loss > 0:
             loss.backward()
 
+            ### Updates - optimizer and others
             # Make sure Variable is on the cpu before converting to numpy.
             # .cpu() is a no-op if you aren't using GPUs.
             train_loss += loss.data.cpu().numpy()
