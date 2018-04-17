@@ -2,7 +2,7 @@
 #
 #SBATCH --mem=60000
 #SBATCH --job-name=j-0.1-sqd10
-#SBATCH --partition=titanx-long
+#SBATCH --partition=m40-long
 #SBATCH --output=sqd-010-sratio0.1-bsize10-%A.out
 #SBATCH --error=sqd-010-sratio0.1-bsize10-%A.err
 #SBATCH --gres=gpu:1

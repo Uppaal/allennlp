@@ -11,3 +11,7 @@ allennlp.egg-info/
 build/
 dist/
 .mypy_cache
+
+/env
+/output
+/data

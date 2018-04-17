@@ -1,0 +1,60 @@
+/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ruppaal/696DS/allennlp/allennlp/run.py", line 21, in <module>
+    from allennlp.commands import main  # pylint: disable=wrong-import-position
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/__init__.py", line 6, in <module>
+    from allennlp.commands.elmo import Elmo
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/elmo.py", line 54, in <module>
+    from allennlp.data.dataset import Batch
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/__init__.py", line 1, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/__init__.py", line 9, in <module>
+    from allennlp.data.dataset_readers.conll2003 import Conll2003DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/conll2003.py", line 10, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+ModuleNotFoundError: No module named 'allennlp.data.dataset_readers.dataset_reader'
+/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ruppaal/696DS/allennlp/allennlp/run.py", line 21, in <module>
+    from allennlp.commands import main  # pylint: disable=wrong-import-position
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/__init__.py", line 6, in <module>
+    from allennlp.commands.elmo import Elmo
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/elmo.py", line 54, in <module>
+    from allennlp.data.dataset import Batch
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/__init__.py", line 1, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/__init__.py", line 9, in <module>
+    from allennlp.data.dataset_readers.conll2003 import Conll2003DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/conll2003.py", line 10, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+ModuleNotFoundError: No module named 'allennlp.data.dataset_readers.dataset_reader'
+/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+Traceback (most recent call last):
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ruppaal/696DS/allennlp/allennlp/run.py", line 21, in <module>
+    from allennlp.commands import main  # pylint: disable=wrong-import-position
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/__init__.py", line 6, in <module>
+    from allennlp.commands.elmo import Elmo
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/elmo.py", line 54, in <module>
+    from allennlp.data.dataset import Batch
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/__init__.py", line 1, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/__init__.py", line 9, in <module>
+    from allennlp.data.dataset_readers.conll2003 import Conll2003DatasetReader
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/conll2003.py", line 10, in <module>
+    from allennlp.data.dataset_readers.dataset_reader import DatasetReader
+ModuleNotFoundError: No module named 'allennlp.data.dataset_readers.dataset_reader'

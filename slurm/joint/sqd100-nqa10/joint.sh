@@ -1,10 +1,10 @@
 #!/bin/bash
 #
 #SBATCH --mem=60000
-#SBATCH --job-name=j-0.1-nqa10
+#SBATCH --job-name=j-nqa10-0
 #SBATCH --partition=titanx-long
-#SBATCH --output=nqa-010-sratio0.1-bsize10-%A.out
-#SBATCH --error=nqa-010-sratio0.1-bsize10-%A.err
+#SBATCH --output=nqa-010-sratio0-bsize10-%A.out
+#SBATCH --error=nqa-010-sratio0-bsize10-%A.err
 #SBATCH --gres=gpu:1
 #SBATCH --mail-type=ALL
 #SBATCH --mail-user=ruppaal@cs.umass.edu
@@ -24,16 +24,16 @@ module load cuda80/toolkit/8.0.44
 cd ../../..
 
 # Create dataset for joint training
-python joint_train.py --target_sampling_ratio 0.1 --debug_ratio 0.1 --train_ratio 0.9 --output_dir "data/joint_nqa_010_0.1/"
+#python joint_train.py --target_sampling_ratio 0.0 --debug_ratio 0.1 --train_ratio 0.9 --output_dir "data/joint_nqa_010_0/"
 
 # Train
-python -m allennlp.run train training_config/bidaf_joint.json -s output/joint_nqa_010_0.1
+python -m allennlp.run train training_config/bidaf_joint.json -s output/joint_nqa_010_0
 
 # Evaluate on SQuAD
-python -m allennlp.run evaluate output/joint_nqa_010_0.1/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
+python -m allennlp.run evaluate output/joint_nqa_010_0/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
 
 # Evaluate on NewsQA
-python -m allennlp.run evaluate output/joint_nqa_010_0.1/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
+python -m allennlp.run evaluate output/joint_nqa_010_0/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
 
 
 
