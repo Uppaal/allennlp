@@ -2,9 +2,9 @@
 #
 #SBATCH --mem=80000
 #SBATCH --job-name=al-bidaf
-#SBATCH --partition=m40-long
-#SBATCH --output=train-1-al-%A.out
-#SBATCH --error=train-1al-%A.err
+#SBATCH --partition=m40-short
+#SBATCH --output=ntrain-1-al-%A.out
+#SBATCH --error=ntrain-1-al-%A.err
 #SBATCH --gres=gpu:1
 
 
@@ -25,5 +25,5 @@ pip install  --user http://download.pytorch.org/whl/cu90/torch-0.3.1-cp36-cp36m-
 ## Change this line so that it points to your bidaf github folder
 cd /home/usaxena/work/s18/696/allennlp/active_learning
 
-python process_logits.py --percent 1 --gpu 1 --source_logits_file "data/train-logits.p" --source_file "data/newsqa/train-v1.1.json" --target_file "data/newsqa/logits_train_dump_1.json"
+python process_logits.py --percent 1 --gpu 1 --source_logits_file "data/train-logits.p" --source_file "data/newsqa/train_dump.json" --target_file "data/newsqa/softm_train_dump_1.json"
 
