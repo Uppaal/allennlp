@@ -61,12 +61,14 @@ def process(args, score_type):
     # for i in range(50):
         scores = None
         if score_type == 0:
-            scores = Score.score_all_using_logits(start_spans[i], end_spans[i], dtype)
-        elif score_type == 1:
-            scores = Score.score_all_using_softmax(start_spans[i], end_spans[i], dtype)
+            scores = Score.score_all_using_logits_sum_all(start_spans[i], end_spans[i], dtype)
+        if score_type == 1:
+            scores = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
         elif score_type == 2:
-            scores = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
+            scores = Score.score_all_using_softmax(start_spans[i], end_spans[i], dtype)
         elif score_type == 3:
+            scores = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
+        elif score_type == 4:
             scores = Score.score_topk_using_softmax(start_spans[i], end_spans[i], dtype, args.k)
         entropy_scores.append(scores)
 
@@ -75,7 +77,7 @@ def process(args, score_type):
     score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
     # print(df)
 
-    sorted_values = score_df.sort_values('entropy')
+    sorted_values = score_df.sort_values(by = 'entropy', ascending = False)
     # print(sorted_values)
 
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
@@ -256,14 +258,28 @@ def training_classifier(args):
     print(np.array(y).shape)
     linreg = LinearRegression()
     linreg.fit(x,y)
+    filename = './trained_model/classifier.sav'
+    pickle.dump(linreg, open(filename, 'wb'))
 
+def retrieve_target_ids(args,k=1):
+    filename = './trained_model/classifier.sav'
+    loaded_model = pickle.load(open(filename, 'rb'))
+    classifier_input = open('classifier_input.p','rb')
+    ids,X,y = pickle.load(open(classifier_input))
+    result = loaded_model.predict(X)
+    sorted_values = np.array(result).argsort()
+    k = int(k*len(sorted_values))
+    top_k = sorted_values[:k]
+    create_dataset_from_ids(top_k,args)
+    print("Done")
+    
 def main():
     args = get_args()
-    create_context_id_pair(args)
-    create_ans_ques_feature(args)
-    training_classifier(args)
+    # create_context_id_pair(args)
+    # create_ans_ques_feature(args)
+    # training_classifier(args)
 
-    # top_ids = process(args, args.score_type)
+    top_ids = process(args, args.score_type)
 
     # create_dataset_from_ids(top_ids.ids, args)
 
