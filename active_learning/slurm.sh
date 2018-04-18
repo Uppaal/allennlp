@@ -11,5 +11,6 @@
 # Log what we're running and where.
 echo $SLURM_JOBID - `hostname` >> ~/slurm-jobs.txt
 
-python process_logits.py -s ../active_data/newsqa/train_dump.json -feat_label_p ../active_data/newsqa_files/classifier_input.p  -t ../active_data/newsqa_files/classifier_top10.json
+python process_logits.py -s_dev ../active_data/newsqa_files/combined_logits_newsqa.p -k 1 -s ../active_data/newsqa/train_dump.json  -t ../active_data/newsqa_files/logits_contrast_top1.json --score-type 1 
+#python process_logits.py -s ../active_data/newsqa/train_dump.json -feat_label_p ../active_data/newsqa_files/classifier_input.p  -t ../active_data/newsqa_files/classifier_top10.json
 #python process_logits.py  -c_i ../active_data/newsqa_files/context_id_combine.p  -logits ../active_data/newsqa_files/combined_logits_newsqa.p  --other_features_file ../active_data/newsqa_files/newsqa_merged.csv -feat_label_p ../active_data/newsqa_filesclassifier_input.p
