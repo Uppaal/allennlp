@@ -27,10 +27,10 @@ def get_args():
     parser.add_argument('-logits', "--logits", default=home+"active_data/squad_small/combined_logits.p")
     parser.add_argument('-p', "--percent", default=1)
     parser.add_argument('-g', "--gpu", default=0)
-    parser.add_argument('-c_i', "--context_id_combine", default=home+"active_data/squad_small/context_id_combine.p")
+    parser.add_argument('-c_i', "--context_id_combine", default=home+"active_data/context_id_combine.p")
     parser.add_argument('-other_features_file', "--other_features_file", default=home+"active_data/squad_small/squad_merged.csv")
     parser.add_argument('-feature_label_file', "--feature_label_file", default=home+"active_data/squad_small/classifier_input.csv")
-    parser.add_argument('-feature_label_file_pickle', "--feature_label_file_pickle", default=home+"active_data/squad_small/classifier_input.p")
+    parser.add_argument('-feat_label_p', "--feature_label_file_pickle", default=home+"active_data/squad_small/classifier_input.p")
 
     '''
     Use 0 for logits
@@ -154,7 +154,7 @@ def create_ans_ques_feature(args):
     flag = 0
 
     for i in range(0,len(df),batch_size):
-        if len(idx[i])>24:
+        if len(idx[i])<24:
             idxcopy.remove(idx[i])
             continue
         start = Variable(torch.Tensor(span_start_logits[i:i+batch_size]))
@@ -173,7 +173,7 @@ def create_ans_ques_feature(args):
     df = pd.read_csv(other_features_file)
     
     for i in range(best_span.size()[0]):
-        # print(i)
+        print(i,best_span.size()[0])
         if idxcopy[i] not in context.keys():
             print("key not found")
         else:
@@ -200,6 +200,7 @@ def create_context_id_pair(args):
     print("Making context-id pair")
     file = open(args.source_file, 'rb')
     f = json.load(file)
+
     data = f['data']
     new_data = []
     paragraph = {}
@@ -273,16 +274,28 @@ def retrieve_target_ids(args,k=1):
     create_dataset_from_ids(top_k,args)
     print("Done")
     
+ 
 def main():
     args = get_args()
-    # create_context_id_pair(args)
-    # create_ans_ques_feature(args)
-    # training_classifier(args)
-
-    top_ids = process(args, args.score_type)
+    #create_context_id_pair(args)
+    #create_ans_ques_feature(args)
+    #training_classifier(args)
+    retrieve_target_ids(args,10)
+    create_classifier_topk 
+    # top_ids = process(args, args.score_type)
 
     # create_dataset_from_ids(top_ids.ids, args)
 
+def create_classifier_topk(args):
+    classifier_input = open(args.feature_label_file_pickle,'rb')
+    ids,X,y = pickle.load(classifier_input)
+    result = loaded_model.predict(X)
+    sorted_values = np.array(result).argsort()
+    k = int(k*len(sorted_values)/100)
+    top_k =sorted_values[:k]
+    ids = np.array(ids)
+    ids_req = ids[top_k] 
+    return ids_req
 
 def create_candidate_spans():
     args = get_args()

@@ -6,12 +6,12 @@ import argparse
 def get_args():
     parser = argparse.ArgumentParser()
 
-    home = "/home/ishita/Downloads/maluuba/allennlp/active_data/squad_small"
+    home = "/home/iankit/maluuba/allennlp/active_data/"
 
-    s_dir = "/"
+    s_dir = ""
     o_file = "/combined_logits.p"
-    parser.add_argument('-s_dir', default = home+s_dir)
-    parser.add_argument('-o_file', default = home+o_file)
+    parser.add_argument('-s_dir', default = s_dir)
+    parser.add_argument('-o_file', default =o_file)
 
     return parser.parse_args()
 
