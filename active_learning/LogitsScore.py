@@ -21,10 +21,13 @@ def calculate_total(start,end,dtype):
     total = -1 * torch.sum(y)
     return total
 
-def calculate_diff(start,end, dtype, k=5):
+def calculate_diff(start,end, dtype, k=10):
     score_mul = get_span_probability(start,end,dtype)
-    score_mul[score_mul <= 0] = 1
+    # score_mul[score_mul <= 0] = 0
     y = score_mul.view(-1).nonzero()
     topk,indices = torch.topk(y,k,dim = 0)
+    topk_diff = torch.max(topk) - topk
+    # print(topk_diff.size())
+    assert topk_diff.size()[0] == k 
     score = torch.sum(torch.max(topk) - topk )
     return score

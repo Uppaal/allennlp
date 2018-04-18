@@ -56,7 +56,7 @@ def process(args, score_type):
     dtype = torch.cuda.FloatTensor
     if (args.gpu == 0):
         dtype = torch.FloatTensor
-
+    print(score_type==1)
     for i in range(len(start_spans)):
     # for i in range(50):
         scores = None
@@ -65,7 +65,9 @@ def process(args, score_type):
         if score_type == 1:
             scores = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
         elif score_type == 2:
-            scores = Score.score_all_using_softmax(start_spans[i], end_spans[i], dtype)
+            scores = Score.score_all_using_softmax_sum_all(start_spans[i], end_spans[i], dtype)
+        elif score_type == 2:
+            scores = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
         elif score_type == 3:
             scores = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
         elif score_type == 4:
@@ -77,7 +79,7 @@ def process(args, score_type):
     score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
     # print(df)
 
-    sorted_values = score_df.sort_values(by = 'entropy', ascending = False)
+    sorted_values = score_df.sort_values(by = 'entropy', ascending = True)
     # print(sorted_values)
 
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
@@ -279,7 +281,7 @@ def main():
     # create_ans_ques_feature(args)
     # training_classifier(args)
 
-    top_ids = process(args, args.score_type)
+    top_ids = process(args, int(args.score_type))
 
     # create_dataset_from_ids(top_ids.ids, args)
 
