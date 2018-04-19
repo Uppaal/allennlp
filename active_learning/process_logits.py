@@ -85,8 +85,8 @@ def process(args, score_type):
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
     # print(idx)
 
-    top_ids = sorted_values[:num_top_values]
-    # top_ids = sorted_values[:num_top_values].ids
+    #top_ids = sorted_values[:num_top_values]
+    top_ids = sorted_values[:num_top_values].ids
     # print(top_ids)
     return top_ids
 
@@ -225,8 +225,11 @@ def create_context_id_pair(args):
 def create_dataset_from_ids(ids, args):
     print("Creating file")
     ids = list(ids)
-
+    print("inside create data")
+    print(len(ids))
     file = open(args.source_file, 'rb')
+    print("Source File is ")
+    print(args.source_file)
     f = json.load(file)
     data = f['data']
     new_data = []
@@ -241,7 +244,7 @@ def create_dataset_from_ids(ids, args):
             for q in qas:
                 id = q['id']
                 if id in ids:
-                    # print("FOUND IT")
+                    print("FOUND IT")
                     print(q['id'])
                     qas_new.append(q)
             if len(qas_new) != 0:
@@ -280,8 +283,12 @@ def retrieve_target_ids(args,k=1):
 def main():
     args = get_args()
     top_ids = process(args, int(args.score_type))
-    retrieve_target_ids(args,10)
-    create_classifier_topk(): 
+    #retrieve_target_ids(args,10)
+    #create_classifier_topk
+    print(len(top_ids))
+    print(top_ids[0])
+    #input()
+    create_dataset_from_ids(top_ids,args) 
 
 def create_classifier_topk(args):
     classifier_input = open(args.feature_label_file_pickle,'rb')

@@ -21,7 +21,7 @@ def calculate_total(start,end,dtype):
     total = -1 * torch.sum(y)
     return total
 
-def calulate_contrast(start,end,dtype,k = 10):
+def calculate_contrast(start,end,dtype,k = 10):
     score_mul = get_span_probability(start,end,dtype)
     y = score_mul.view(-1).nonzero()
     topk,indices = torch.topk(y,k,dim = 0)
