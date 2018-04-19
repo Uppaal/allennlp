@@ -87,3 +87,7 @@ def score_top2_contrast(start, end, top=1):
     end = torch.from_numpy(np.array([end]))
 
     return start, end
+
+def score_all_using_classifier(model,X_target):
+    result = model.predict(X_target)
+    return result    
