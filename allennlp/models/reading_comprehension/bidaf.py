@@ -178,36 +178,36 @@ class BidirectionalAttentionFlow(Model):
             string from the original passage that the model thinks is the best answer to the
             question.
         """
-        print("METADATA: ")
+        #print("METADATA: ")
 
         embedded_question = self._highway_layer(self._text_field_embedder(question))
-        print("Embedded question dim: ", embedded_question.shape)
+        #print("Embedded question dim: ", embedded_question.shape)
         embedded_passage = self._highway_layer(self._text_field_embedder(passage))
-        print("Embedded passage dim: ", embedded_passage.shape)
+        #print("Embedded passage dim: ", embedded_passage.shape)
         batch_size = embedded_question.size(0)
         passage_length = embedded_passage.size(1)
-        print("Passage Length: ", passage_length)
+        #print("Passage Length: ", passage_length)
         question_mask = util.get_text_field_mask(question).float()
         passage_mask = util.get_text_field_mask(passage).float()
         question_lstm_mask = question_mask if self._mask_lstms else None
         passage_lstm_mask = passage_mask if self._mask_lstms else None
 
         encoded_question = self._dropout(self._phrase_layer(embedded_question, question_lstm_mask))
-        print("Encoded question dim: ", encoded_question.shape)
+        #print("Encoded question dim: ", encoded_question.shape)
         encoded_passage = self._dropout(self._phrase_layer(embedded_passage, passage_lstm_mask))
-        print("Encoded passage dim: ", encoded_passage.shape)
+        #print("Encoded passage dim: ", encoded_passage.shape)
         encoding_dim = encoded_question.size(-1)
-        print("Encoding dim: ", encoding_dim)
+        #print("Encoding dim: ", encoding_dim)
 
         # Shape: (batch_size, passage_length, question_length)
         passage_question_similarity = self._matrix_attention(encoded_passage, encoded_question)
-        print("passage ques similarity dim: ", passage_question_similarity.shape)
+        #print("passage ques similarity dim: ", passage_question_similarity.shape)
         # Shape: (batch_size, passage_length, question_length)
         passage_question_attention = util.last_dim_softmax(passage_question_similarity, question_mask)
-        print("Passage ques attention dim: ", passage_question_attention.shape)
+        #print("Passage ques attention dim: ", passage_question_attention.shape)
         # Shape: (batch_size, passage_length, encoding_dim)
         passage_question_vectors = util.weighted_sum(encoded_question, passage_question_attention)
-        print("Passage question vectors dim: ", passage_question_vectors.shape)
+        #print("Passage question vectors dim: ", passage_question_vectors.shape)
 
         # We replace masked values with something really negative here, so they don't affect the
         # max below.
@@ -216,10 +216,10 @@ class BidirectionalAttentionFlow(Model):
                                                        -1e7)
         # Shape: (batch_size, passage_length)
         question_passage_similarity = masked_similarity.max(dim=-1)[0].squeeze(-1)
-        print("Question Passage Similarity dim: ", question_passage_similarity.shape)
+        #print("Question Passage Similarity dim: ", question_passage_similarity.shape)
         # Shape: (batch_size, passage_length)
         question_passage_attention = util.masked_softmax(question_passage_similarity, passage_mask)
-        print("Question passage attention dim: ", question_passage_attention.shape)
+        #print("Question passage attention dim: ", question_passage_attention.shape)
         # Shape: (batch_size, encoding_dim)
         question_passage_vector = util.weighted_sum(encoded_passage, question_passage_attention)
         # Shape: (batch_size, passage_length, encoding_dim)
@@ -233,23 +233,23 @@ class BidirectionalAttentionFlow(Model):
                                           encoded_passage * passage_question_vectors,
                                           encoded_passage * tiled_question_passage_vector],
                                          dim=-1)
-        print("Final Merged Passage dim: ", final_merged_passage.shape)
+        #print("Final Merged Passage dim: ", final_merged_passage.shape)
         modeled_passage = self._dropout(self._modeling_layer(final_merged_passage, passage_lstm_mask))
-        print("Modeled Passage dim: ",modeled_passage.shape)
+        #print("Modeled Passage dim: ",modeled_passage.shape)
         modeling_dim = modeled_passage.size(-1)
-        print("Modeling dim: ", modeling_dim)
+        #print("Modeling dim: ", modeling_dim)
         # Shape: (batch_size, passage_length, encoding_dim * 4 + modeling_dim))
         span_start_input = self._dropout(torch.cat([final_merged_passage, modeled_passage], dim=-1))
-        print("Span start input shape: ", span_start_input.shape)
+        #print("Span start input shape: ", span_start_input.shape)
         # Shape: (batch_size, passage_length)
         span_start_logits = self._span_start_predictor(span_start_input).squeeze(-1)
-        print("Span start logits: ", span_start_logits.shape)
+        #print("Span start logits: ", span_start_logits.shape)
         # Shape: (batch_size, passage_length)
         span_start_probs = util.masked_softmax(span_start_logits, passage_mask)
-        print("span start probs dim: ", span_start_probs.shape)
+        #print("span start probs dim: ", span_start_probs.shape)
         # Shape: (batch_size, modeling_dim)
         span_start_representation = util.weighted_sum(modeled_passage, span_start_probs)
-        print("Span start representation dim: ", span_start_representation.shape)
+        #print("Span start representation dim: ", span_start_representation.shape)
         # Shape: (batch_size, passage_length, modeling_dim)
         tiled_start_representation = span_start_representation.unsqueeze(1).expand(batch_size,
                                                                                    passage_length,
@@ -315,7 +315,7 @@ class BidirectionalAttentionFlow(Model):
         return output_dict
 
     def dump_logits(self, metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs):
-        print("In dump logits!")
+        #print("In dump logits!")
         limit = 1000
         #limit = 5
         eval_per_epoch = "eval_per_epoch"
@@ -330,7 +330,7 @@ class BidirectionalAttentionFlow(Model):
             self.current_batch_count = 0
 
         file = open(filename, 'a')
-        print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
+        #print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
         # print(torch.shape(span_start_logits.data))
         span_start_logits_data = np.array(span_start_logits.data).tolist()
         # span_start_probs_data = np.asarray(span_start_probs.data).tolist()
