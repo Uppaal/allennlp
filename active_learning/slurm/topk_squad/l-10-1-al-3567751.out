@@ -1,0 +1,16 @@
+Requirement already satisfied: torchvision in /home/usaxena/.local/lib/python3.6/site-packages
+Requirement already satisfied: pandas in /home/usaxena/.local/lib/python3.6/site-packages
+Requirement already satisfied: torch in /home/usaxena/.local/lib/python3.6/site-packages (from torchvision)
+Requirement already satisfied: numpy in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torchvision)
+Requirement already satisfied: pillow>=4.1.1 in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torchvision)
+Requirement already satisfied: six in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torchvision)
+Requirement already satisfied: python-dateutil>=2 in /home/usaxena/anaconda3/lib/python3.6/site-packages (from pandas)
+Requirement already satisfied: pytz>=2011k in /home/usaxena/anaconda3/lib/python3.6/site-packages (from pandas)
+Requirement already satisfied: pyyaml in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torch->torchvision)
+Requirement already satisfied: olefile in /home/usaxena/anaconda3/lib/python3.6/site-packages (from pillow>=4.1.1->torchvision)
+Requirement already satisfied: torch==0.3.1 from http://download.pytorch.org/whl/cu90/torch-0.3.1-cp36-cp36m-linux_x86_64.whl in /home/usaxena/.local/lib/python3.6/site-packages
+Requirement already satisfied: pyyaml in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torch==0.3.1)
+Requirement already satisfied: numpy in /home/usaxena/anaconda3/lib/python3.6/site-packages (from torch==0.3.1)
+Number of datapoints: 87375
+Sorting now
+Creating file

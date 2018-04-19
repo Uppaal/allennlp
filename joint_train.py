@@ -4,7 +4,6 @@ import argparse
 import json
 
 def main():
-    # print "yo"
     args = get_args()
     process(args)
 
@@ -14,22 +13,20 @@ def get_args():
     source_dir = "data/squad/"
     target_dir = "data/NewsQA/"
     output_dir = "data/Joint_01/"
-    # glove_dir = os.path.join(home, "data", "glove")
+   
+    # train_ratio: How to split the data into train and dev sets (from the train file). E.g. 0.9 splits to 90% training data and 10% for dev.
+    # debug_ratio: What percentage of target directory should be included. E.g. 0.05 means 5% NewsQA is added to 100% SQuAD.
+    # target_sampling_ratio: How the target directory should be oversampled to reduce class imbalance between source and target. Do not cross values above 0.3.
+
     parser.add_argument('-s', "--source_dir", default=source_dir)
     parser.add_argument('-t', "--target_dir", default=target_dir)
     parser.add_argument('-o', "--output_dir", default=output_dir)
-    # parser.add_argument('-d', "--debug", action='store_true')
+    
     parser.add_argument("--train_ratio", default=0.9, type=float)
-    parser.add_argument("--debug_ratio", default=0.05, type=float)
+    parser.add_argument("--debug_ratio", default=1.0, type=float)
     parser.add_argument("--data_ratio", default=0.01, type=float)
     parser.add_argument("--target_sampling_ratio", default=0.0, type=float)
-    # parser.add_argument("--mode", default="full", type=str)
-    # parser.add_argument("--single_path", default="", type=str)
-    # parser.add_argument("--tokenizer", default="PTB", type=str)
-    # parser.add_argument("--url", default="vision-server2.corp.ai2", type=str)
-    # parser.add_argument("--port", default=8000, type=int)
-    # parser.add_argument("--split", action='store_true')
-    # TODO : put more args here
+
     return parser.parse_args()
 
 def process(args):
@@ -42,12 +39,16 @@ def process(args):
     debug_ratio = args.debug_ratio
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+
     splits = ["train","dev"]
     for split in splits:
         fname = split+"-v1.1.json"
-        print(source_dir+fname)
+        tfname = split+".json" 
+        print("Source: ",source_dir+fname)
+        print("Target: ", target_dir+tfname)
         sf = pd.read_json(source_dir+fname)
-        tf = pd.read_json(target_dir+fname)
+        tf = pd.read_json(target_dir+tfname)
+
         output_data = []
         output_version = []
         if split == "dev":
@@ -95,5 +96,6 @@ def process(args):
         of = {"data": output_data, "version": output_version}
         with open(output_dir+fname,'w') as fp:
             json.dump(of, fp)
+
 if __name__ =="__main__":
     main()

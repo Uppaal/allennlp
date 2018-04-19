@@ -5,6 +5,7 @@ from functools import reduce
 
 import pandas as pd
 import torch
+import os
 
 import LogitsScore, SoftmaxScore, Score
 from process_candidate_answers import process_saved_file
@@ -33,8 +34,9 @@ def get_args():
     Use 0 for logits
     Use 1 for softmax
     '''
-    parser.add_argument("--score-type", default=0)
-    parser.add_argument("--k", default=2)
+    parser.add_argument("--score-type", default=2)
+    parser.add_argument("--k", default=1)
+
 
     return parser.parse_args()
 
@@ -72,7 +74,7 @@ def process(args, score_type):
     score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
     # print(df)
 
-    sorted_values = score_df.sort_values('entropy')
+    sorted_values = score_df.sort_values('entropy', ascending=False)
     # print(sorted_values)
 
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
@@ -159,6 +161,7 @@ def create_candidate_spans():
 
 
 if __name__ == "__main__":
+    print(os.getcwd())
     main()
-    # create_candidate_spans()
+    #create_candidate_spans()
     # args = get_args()

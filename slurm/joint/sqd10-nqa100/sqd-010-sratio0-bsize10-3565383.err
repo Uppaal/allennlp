@@ -1,0 +1,78 @@
+Traceback (most recent call last):
+  File "joint_train.py", line 99, in <module>
+    main()
+  File "joint_train.py", line 9, in main
+    process(args)
+  File "joint_train.py", line 49, in process
+    sf = pd.read_json(source_dir+fname)
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/pandas/io/json/json.py", line 366, in read_json
+    return json_reader.read()
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/pandas/io/json/json.py", line 467, in read
+    obj = self._get_object_parser(self.data)
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/pandas/io/json/json.py", line 484, in _get_object_parser
+    obj = FrameParser(json, **kwargs).parse()
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/pandas/io/json/json.py", line 576, in parse
+    self._parse_no_numpy()
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/pandas/io/json/json.py", line 793, in _parse_no_numpy
+    loads(json, precise_float=self.precise_float), dtype=None)
+ValueError: Expected object or value
+/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/h5py/__init__.py:36: FutureWarning: Conversion of the second argument of issubdtype from `float` to `np.floating` is deprecated. In future, it will be treated as `np.float64 == np.dtype(float).type`.
+  from ._conv import register_converters as _register_converters
+/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/psycopg2/__init__.py:144: UserWarning: The psycopg2 wheel package will be renamed from release 2.8; in order to keep installing from binary please use "pip install psycopg2-binary" instead. For details see: <http://initd.org/psycopg/docs/install.html#binary-install-from-pypi>.
+  """)
+2018-04-05 01:58:53,553 - INFO - allennlp.common.params - random_seed = 13370
+2018-04-05 01:58:53,554 - INFO - allennlp.common.params - numpy_seed = 1337
+2018-04-05 01:58:53,554 - INFO - allennlp.common.params - pytorch_seed = 133
+2018-04-05 01:58:53,560 - INFO - allennlp.common.checks - Pytorch version: 0.3.1
+2018-04-05 01:58:53,564 - INFO - allennlp.common.params - dataset_reader.type = squad
+2018-04-05 01:58:53,564 - INFO - allennlp.common.params - dataset_reader.tokenizer.type = word
+2018-04-05 01:58:53,565 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.type = spacy
+2018-04-05 01:58:53,565 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.language = en_core_web_sm
+2018-04-05 01:58:53,565 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.pos_tags = False
+2018-04-05 01:58:53,565 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.parse = False
+2018-04-05 01:58:53,565 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_splitter.ner = False
+2018-04-05 01:58:53,998 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_filter.type = pass_through
+2018-04-05 01:58:53,998 - INFO - allennlp.common.params - dataset_reader.tokenizer.word_stemmer.type = pass_through
+2018-04-05 01:58:53,998 - INFO - allennlp.common.params - dataset_reader.tokenizer.start_tokens = None
+2018-04-05 01:58:53,998 - INFO - allennlp.common.params - dataset_reader.tokenizer.end_tokens = None
+2018-04-05 01:58:53,998 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.type = single_id
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.namespace = tokens
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.tokens.lowercase_tokens = True
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.type = characters
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.namespace = token_characters
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.byte_encoding = utf-8
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.lowercase_characters = False
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.start_tokens = [259]
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.token_indexers.token_characters.character_tokenizer.end_tokens = [260]
+2018-04-05 01:58:53,999 - INFO - allennlp.common.params - dataset_reader.lazy = False
+2018-04-05 01:58:54,000 - INFO - allennlp.common.params - validation_dataset_reader = None
+2018-04-05 01:58:54,000 - INFO - allennlp.common.params - train_data_path = data/joint_sqd_010_0/train-v1.1.json
+2018-04-05 01:58:54,000 - INFO - allennlp.commands.train - Reading training data from data/joint_sqd_010_0/train-v1.1.json
+0it [00:00, ?it/s]Traceback (most recent call last):
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/cm/shared/apps/python/3.6.1/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/ruppaal/696DS/allennlp/allennlp/run.py", line 24, in <module>
+    main(prog="python -m allennlp.run")
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/__init__.py", line 63, in main
+    args.func(args)
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/train.py", line 99, in train_model_from_args
+    args.recover)
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/train.py", line 129, in train_model_from_file
+    return train_model(params, serialization_dir, file_friendly_logging, recover)
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/train.py", line 257, in train_model
+    all_datasets = datasets_from_params(params)
+  File "/home/ruppaal/696DS/allennlp/allennlp/commands/train.py", line 146, in datasets_from_params
+    train_data = dataset_reader.read(train_data_path)
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/dataset_reader.py", line 73, in read
+    instances = [instance for instance in Tqdm.tqdm(instances)]
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/dataset_reader.py", line 73, in <listcomp>
+    instances = [instance for instance in Tqdm.tqdm(instances)]
+  File "/home/ruppaal/696DS/allennlp/env/lib/python3.6/site-packages/tqdm/_tqdm.py", line 897, in __iter__
+    for obj in iterable:
+  File "/home/ruppaal/696DS/allennlp/allennlp/data/dataset_readers/reading_comprehension/squad.py", line 50, in _read
+    file_path = cached_path(file_path)
+  File "/home/ruppaal/696DS/allennlp/allennlp/common/file_utils.py", line 76, in cached_path
+    raise FileNotFoundError("file {} not found".format(url_or_filename))
+FileNotFoundError: file data/joint_sqd_010_0/train-v1.1.json not found
