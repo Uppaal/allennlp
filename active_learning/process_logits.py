@@ -17,11 +17,15 @@ def get_args():
 
     source_logits_file = "data/combined_logits.p"
     source_file = "data/newsqa/dev_dump.json"
-    target_file = "data/newsqa/top_dev_dump.json"
+    target_dump_selected_ids = "data/newsqa/top_dev_dump_selected.json"
+    target_dump_unselected_ids = "data/newsqa/top_dev_dump_unselected.json"
 
-    parser.add_argument('-s_dev', "--source_logits_file", default=home + source_logits_file)
-    parser.add_argument('-t', "--target_file", default=home + target_file)
     parser.add_argument('-s', "--source_file", default=home + source_file)
+    parser.add_argument('-s_logits', "--source_logits_file", default=home + source_logits_file)
+    #dumping data
+    parser.add_argument('-t_selected_ids', "--target_dump_selected_ids", default=home + target_dump_selected_ids)
+    parser.add_argument('-t_unselected_ids', "--target_dump_unselected_ids", default=home + target_dump_unselected_ids)
+    
     parser.add_argument('-p', "--percent", default=1)
     parser.add_argument('-g', "--gpu", default=0)
 
@@ -87,29 +91,41 @@ def create_dataset_from_ids(ids, args):
     file = open(args.source_file, 'rb')
     f = json.load(file)
     data = f['data']
-    new_data = []
-
+    data_in_ids = []
+    data_not_in_ids=[]
     for item in data:
         paragraphs = item['paragraphs']
         for p in paragraphs:
-            paragraph = []
+            paragraph_in_ids = []
+            paragraph_not_in_ids = []
             context = p['context']
             qas = p['qas']
-            qas_new = []
+            qas_in_ids= []
+            qas_not_in_ids= []
             for q in qas:
                 id = q['id']
                 if id in ids:
                     # print("FOUND IT")
                     print(q['id'])
-                    qas_new.append(q)
-            if len(qas_new) != 0:
-                paragraph.append({"context": context, "qas": qas_new})
-            if len(paragraph) != 0:
-                new_data.append({"paragraphs": paragraph, "title": "Hello"})
-    jsonfinal = {"data": new_data, "version": "4"}
+                    qas_in_ids.append(q)
+                else:
+                    qas_not_in_ids.append(q)
+            if len(qas_in_ids) != 0:
+                paragraph_in_ids.append({"context": context, "qas": qas_in_ids})
+            if len(qas_not_in_ids) != 0:
+                paragraph_not_in_ids.append({"context": context, "qas": qas_not_in_ids})
+            if len(paragraph_in_ids) != 0:
+                data_in_ids.append({"paragraphs": paragraph_in_ids, "title": "Hello"})
+            if len(paragraph_not_in_ids) != 0:
+                data_not_in_ids.append({"paragraphs": paragraph_not_in_ids, "title": "Hello"})
+            
+    jsonfinal_in_ids = {"data": data_in_ids, "version": "4"}
+    jsonfinal_not_in_ids = {"data": data_not_in_ids, "version": "4"}
 
-    with open(args.target_file, 'w') as fp:
-        json.dump(jsonfinal, fp)
+    with open(args.target_dump_selected_ids, 'w') as fp:
+        json.dump(jsonfinal_in_ids, fp)
+    with open(args.target_dump_unselected_ids, 'w') as fp:
+        json.dump(jsonfinal_not_in_ids, fp)
 
 
 def main():
