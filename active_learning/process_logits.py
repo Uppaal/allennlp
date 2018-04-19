@@ -23,6 +23,7 @@ def get_args():
 
     parser.add_argument('-s', "--source_file", default=home + source_file)
     parser.add_argument('-t', "--target_file", default=home + target_file)
+    parser.add_argument('-t_dump', "--target_dump_file", default=home + target_file)
     
 
     parser.add_argument('-t_logits', "--target_logits", default=home+"active_data/squad_small/combined_logits.p")
@@ -104,7 +105,7 @@ def create_dataset_from_ids(ids, args):
     ids = list(ids)
     print("inside create data")
     print(len(ids))
-    file = open(args.source_file, 'rb')
+    file = open(args.target_file, 'rb')
     print("Source File is ")
     print(args.source_file)
     f = json.load(file)
@@ -130,7 +131,7 @@ def create_dataset_from_ids(ids, args):
                 new_data.append({"paragraphs": paragraph, "title": "Hello"})
     jsonfinal = {"data": new_data, "version": "4"}
 
-    with open(args.target_file, 'w') as fp:
+    with open(args.target_dump_file, 'w') as fp:
         json.dump(jsonfinal, fp)
 
     
