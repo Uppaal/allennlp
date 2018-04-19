@@ -285,6 +285,7 @@ class BidirectionalAttentionFlow(Model):
         # print(len(metadata))
         if self.training == False:
             self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
+            
 
         if span_start is not None:
             loss = nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
