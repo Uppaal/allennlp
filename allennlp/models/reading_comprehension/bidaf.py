@@ -330,7 +330,7 @@ class BidirectionalAttentionFlow(Model):
             self.current_batch_count = 0
 
         file = open(filename, 'a')
-        #print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
+        # print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
         # print(torch.shape(span_start_logits.data))
         span_start_logits_data = np.array(span_start_logits.data).tolist()
         # span_start_probs_data = np.asarray(span_start_probs.data).tolist()
