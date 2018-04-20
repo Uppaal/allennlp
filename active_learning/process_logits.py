@@ -54,32 +54,35 @@ def process(args, score_type, scoring):
     logits_ids = list(df_logits.id)
     start_spans = list(df_logits.span_start_logits)
     end_spans = list(df_logits.span_end_logits)
-
     entropy_scores = []
 
     num_datapoints = len(start_spans)
     print("Number of datapoints: {}".format(num_datapoints))
-
+    score_mul_list=[]
     dtype = torch.cuda.FloatTensor
     if (args.gpu == 0):
         dtype = torch.FloatTensor
     if scoring =='entropy':
 	    for i in range(len(start_spans)):
 	    # for i in range(50):
+	        # print(i)
 	        scores = None
+	        # print(type(start_spans),type(end_spans))
+	        # print(end_spans[i])
 	        if score_type == 0:
-	            scores = Score.score_all_using_logits_sum_all(start_spans[i], end_spans[i], dtype)
+	            scores,score_mul = Score.score_all_using_logits_sum_all(start_spans[i], end_spans[i], dtype)
 	        elif score_type == 1:
-	            scores = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
+	            scores,score_mul = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
 	        elif score_type == 2:
-	            scores = Score.score_all_using_softmax_sum_all(start_spans[i], end_spans[i], dtype)
+	            scores,score_mul = Score.score_all_using_softmax_sum_all(start_spans[i], end_spans[i], dtype)
 	        elif score_type == 3:
-	            scores = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
+	            scores,score_mul = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
 	        elif score_type == 4:
-	            scores = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
+	            scores,score_mul = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
 	        elif score_type == 5:
-	            scores = Score.score_topk_using_softmax(start_spans[i], end_spans[i], dtype, args.k)
+	            scores,score_mul = Score.score_topk_using_softmax(start_spans[i], end_spans[i], dtype, args.k)
 	        entropy_scores.append(scores)
+	        # score_mul_list.append(score_mul)
     if scoring =='classifier':
         ids, X_source, y_source = create_features(args.source_file, args.source_logits,args.source_other_features_file,args,feature_source_label_file)
         model = training_classifier(X_source,y_source)
@@ -97,7 +100,7 @@ def process(args, score_type, scoring):
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
 
     top_ids = list(sorted_values[:num_top_values].ids)
-    return top_ids    
+    return top_ids,sorted_values.ids,score_mul_list    
     
     
 def create_dataset_from_ids(ids, args):
@@ -138,7 +141,7 @@ def create_dataset_from_ids(ids, args):
  
 def main():
     args = get_args()
-    top_ids = process(args, int(args.score_type),args.scoring)
+    top_ids,_,_ = process(args, int(args.score_type),args.scoring)
     #retrieve_target_ids(args,10)
     #create_classifier_topk
     print(len(top_ids))

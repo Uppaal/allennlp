@@ -19,7 +19,7 @@ def calculate_total(start,end,dtype):
     y = torch.log(score_mul)
     y = score_mul * y
     total = -1 * torch.sum(y)
-    return total
+    return total,score_mul
 
 def calculate_contrast(start,end,dtype,k = 10):
     score_mul = get_span_probability(start,end,dtype)
@@ -28,4 +28,4 @@ def calculate_contrast(start,end,dtype,k = 10):
     topk_diff = torch.max(topk) - topk
     assert topk_diff.size()[0] == k 
     score = torch.sum(torch.max(topk) - topk )
-    return score
+    return score,score_mul
