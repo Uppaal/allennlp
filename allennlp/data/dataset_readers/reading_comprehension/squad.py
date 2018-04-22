@@ -53,7 +53,8 @@ class SquadReader(DatasetReader):
         with open(file_path) as dataset_file:
             dataset_json = json.load(dataset_file)
             dataset = dataset_json['data']
-            version = dataset_json['version']
+            # version = dataset_json['version']
+            version = 0
         logger.info("Reading the dataset")
         count = 0
         for article in dataset:
@@ -84,11 +85,12 @@ class SquadReader(DatasetReader):
                     yield instance
         ################################################################
         if target_file_path:
+            version = 1
             target_file_path = cached_path(target_file_path)
             with open(target_file_path) as dataset_file:
                 dataset_json = json.load(dataset_file)
                 dataset = dataset_json['data']
-                version = dataset_json['version']
+                # version = dataset_json['version']
             logger.info("Reading the dataset")
             count = 0
             for article in dataset:

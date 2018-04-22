@@ -401,7 +401,11 @@ class Trainer:
         ############################################################################################
         ########################## Extra code ######################################################
         ############################################################################################
-        dvsg_ratio = 0.5
+        dvsg_ratio = 0.1 #This is the ratio that trades off training the discriminator vs the generator
+        """
+        - Discriminator will be trained equal to the ratio dvsg
+        - The model will be trained equal to the ratio 1-dvsg
+        """
         ############################################################################################
         ############################################################################################
         logger.info("Epoch %d/%d", epoch, self._num_epochs - 1)
@@ -434,12 +438,19 @@ class Trainer:
         for batch in train_generator_tqdm:
 
             ### Print statements
-            print(batch['span_start'])
-            # print(batch['metadata'])
-            print(len(batch['metadata']))
-            for diter in range(len(batch['metadata'])):
-                print(batch['metadata'][diter]['domain'])
-                # print(batch['span_start'].keys())
+            # print(batch['span_start'])
+            # # print(batch['metadata'])
+            # print(len(batch['metadata']))
+            # for diter in range(len(batch['metadata'])):
+            #     print(batch['metadata'][diter]['domain'])
+            #     # print(batch['span_start'].keys())
+            batch['train_mode'] = 0
+            """
+            0 - corresponds to training the layers other than the discriminator with both maximizing the 
+                discriminator loss and minimizing the performance loss
+            1 - corresponds to training the discriminator layer trying to minimize its loss fn
+            """
+            ###################################################################################################
 
             ###  Logging Info
             batches_this_epoch += 1
@@ -456,15 +467,23 @@ class Trainer:
             ### Loss calculation
             rand_train = random.random()
             if rand_train<dvsg_ratio:
-                batch['train_mode'] = 0
+                batch['train_mode'] = 1
                 loss = self._batch_loss(batch, for_training=True)
-                print(type(loss))
+                loss.backward()
+                self._model.zero_grad_model()
+                # print(type(loss))
             else:
                 batch['train_mode'] = 0
                 loss = self._batch_loss(batch, for_training=True)
+                loss.backward()
+                self._model.zero_grad_discriminator()
             # if loss > 0:
-            loss.backward()
 
+            # self._model.zero_grad_model()
+            # self._model.zero_grad_discriminator()
+            # print("done")
+            # while 1:
+            #     continue
             ### Updates - optimizer and others
             # Make sure Variable is on the cpu before converting to numpy.
             # .cpu() is a no-op if you aren't using GPUs.

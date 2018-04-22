@@ -16,7 +16,7 @@ class CategoricalAccuracy(Metric):
     def __init__(self, top_k: int = 1) -> None:
         self._top_k = top_k
         self.correct_count = 0.
-        self.total_count = 0.
+        self.total_count = 0.0
 
     def __call__(self,
                  predictions: torch.Tensor,
@@ -68,7 +68,10 @@ class CategoricalAccuracy(Metric):
         -------
         The accumulated accuracy.
         """
-        accuracy = float(self.correct_count) / float(self.total_count)
+        # print(self.total_count)
+        accuracy = 0
+        if self.total_count != 0:
+            accuracy = float(self.correct_count) / float(self.total_count)
         if reset:
             self.reset()
         return accuracy
