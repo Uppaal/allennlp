@@ -137,7 +137,9 @@ class BidirectionalAttentionFlow(Model):
                 span_start: torch.IntTensor = None,
                 span_end: torch.IntTensor = None,
                 metadata: List[Dict[str, Any]] = None,
-                train_mode: int = 0) -> Dict[str, torch.Tensor]:
+                train_mode: int = 0,
+                domain_indices: torch.LongTensor = None,
+                domain_info: torch.LongTensor = None) -> Dict[str, torch.Tensor]:
         # pylint: disable=arguments-differ
         """
         Parameters
@@ -314,14 +316,14 @@ class BidirectionalAttentionFlow(Model):
         # print(len(metadata))
 
         ##################################### Masking based on target and source ##########################
-        domain_info = torch.FloatTensor([metadata[i]['domain'] for i in range(len(metadata))])
-        domain_indices = torch.LongTensor([i for i in range(len(metadata))])
-        domain_mask = domain_info < 0.5
-        if self.training:
-            domain_indices = domain_indices[domain_mask]
+        # domain_info = torch.FloatTensor([metadata[i]['domain'] for i in range(len(metadata))])
+        # domain_indices = torch.LongTensor([i for i in range(len(metadata))])
+        # domain_mask = domain_info < 0.5
+        # if self.training:
+        #     domain_indices = domain_indices[domain_mask]
         if self.training == False:
             train_mode = 0
-        # print(domain_info)
+        print(domain_info,domain_indices)
         """
         Domain Info:
         0 - Corresponds to source domain
@@ -338,7 +340,7 @@ class BidirectionalAttentionFlow(Model):
 
         ## Discriminator Loss
         if train_mode == 0 and self.training:
-            loss = self.DiscriminatorCriterion(new_out,Variable(torch.ones(domain_info.shape)-domain_info))
+            loss = self.DiscriminatorCriterion(new_out,Variable(1-domain_info))
             ploss = loss.data
         elif train_mode == 1:
             loss = self.DiscriminatorCriterion(new_out, Variable(domain_info))
@@ -348,25 +350,29 @@ class BidirectionalAttentionFlow(Model):
             ploss = 0
         ## Model loss
         print ("Before adding perfomance loss",ploss)
-        if span_start is not None and len(domain_indices)>0 and train_mode == 0:
-            ###################################################################################################
-            # print("inside")
-            span_start_logits = torch.index_select(span_start_logits, 0, Variable(domain_indices))
-            # print(span_start_logits)
-            span_end_logits = torch.index_select(span_end_logits, 0, Variable(domain_indices))
-            span_start = torch.index_select(span_start, 0, Variable(domain_indices))
-            span_end = torch.index_select(span_end, 0, Variable(domain_indices))
-            passage_mask = torch.index_select(passage_mask, 0, Variable(domain_indices))
-            best_span_loss = torch.index_select(best_span, 0, Variable(domain_indices))
-            # print(type(domain_mask), domain_mask, domain_indices)
-            # print(span_end, span_start)
-            # print("passage mask", passage_mask)
-            ###################################################################################################
-            loss += nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
-            self._span_start_accuracy(span_start_logits, span_start.squeeze(-1))
-            loss += nll_loss(util.masked_log_softmax(span_end_logits, passage_mask), span_end.squeeze(-1))
-            self._span_end_accuracy(span_end_logits, span_end.squeeze(-1))
-            self._span_accuracy(best_span_loss, torch.stack([span_start, span_end], -1))
+        if span_start is not None and train_mode == 0:
+            if domain_indices is None or len(domain_indices)>0:
+                if domain_indices is not None:
+                    ###################################################################################################
+                    # print("inside")
+                    span_start_logits = torch.index_select(span_start_logits, 0, Variable(domain_indices))
+                    # print(span_start_logits)
+                    span_end_logits = torch.index_select(span_end_logits, 0, Variable(domain_indices))
+                    span_start = torch.index_select(span_start, 0, Variable(domain_indices))
+                    span_end = torch.index_select(span_end, 0, Variable(domain_indices))
+                    passage_mask = torch.index_select(passage_mask, 0, Variable(domain_indices))
+                    best_span_loss = torch.index_select(best_span, 0, Variable(domain_indices))
+                    # print(type(domain_mask), domain_mask, domain_indices)
+                    # print(span_end, span_start)
+                    # print("passage mask", passage_mask)
+                    ###################################################################################################
+                else:
+                    best_span_loss = best_span
+                loss += nll_loss(util.masked_log_softmax(span_start_logits, passage_mask), span_start.squeeze(-1))
+                self._span_start_accuracy(span_start_logits, span_start.squeeze(-1))
+                loss += nll_loss(util.masked_log_softmax(span_end_logits, passage_mask), span_end.squeeze(-1))
+                self._span_end_accuracy(span_end_logits, span_end.squeeze(-1))
+                self._span_accuracy(best_span_loss, torch.stack([span_start, span_end], -1))
 
         print("After adding",loss.data)
 

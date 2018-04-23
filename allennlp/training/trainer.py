@@ -438,17 +438,32 @@ class Trainer:
         for batch in train_generator_tqdm:
 
             ### Print statements
-            # print(batch['span_start'])
+            # print(batch['span_start'].is_cuda)
             # # print(batch['metadata'])
             # print(len(batch['metadata']))
             # for diter in range(len(batch['metadata'])):
             #     print(batch['metadata'][diter]['domain'])
             #     # print(batch['span_start'].keys())
+            metadata = batch['metadata']
             batch['train_mode'] = 0
             """
             0 - corresponds to training the layers other than the discriminator with both maximizing the 
                 discriminator loss and minimizing the performance loss
             1 - corresponds to training the discriminator layer trying to minimize its loss fn
+            """
+            domain_info = torch.FloatTensor([metadata[i]['domain'] for i in range(len(metadata))])
+            domain_indices = torch.LongTensor([i for i in range(len(metadata))])
+            domain_mask = domain_info < 0.5
+            domain_indices = domain_indices[domain_mask]
+            if batch['span_start'].is_cuda:
+                domain_indices.cuda()
+                domain_info.cuda()
+            batch['domain_indices'] = domain_indices
+            batch['domain_info'] = domain_info
+            """
+            Domain Info:
+            0 - Corresponds to source domain
+            1 - Corresponds to target domain
             """
             ###################################################################################################
 
