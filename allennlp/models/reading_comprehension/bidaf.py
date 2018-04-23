@@ -192,8 +192,8 @@ class BidirectionalAttentionFlow(Model):
             string from the original passage that the model thinks is the best answer to the
             question.
         """
-        print("METADATA: ")
-        print("Train Mode: ", train_mode)
+        # print("METADATA: ")
+        # print("Train Mode: ", train_mode)
 
         embedded_question = self._highway_layer(self._text_field_embedder(question))
         # print("Embedded question dim: ", embedded_question.shape)
@@ -221,7 +221,10 @@ class BidirectionalAttentionFlow(Model):
         # print(domain_info)
         # print("Discriminator input size: ", disc_output.shape())
         new_out, hidden_disc = self.Discriminator_layer(disc_output)
-        new_out = self.Discriminator_MLP(torch.index_select(new_out,1,Variable(torch.LongTensor([new_out.shape[1]-1]))).squeeze())
+        new_out = new_out.permute(1,0,2)[-1].contiguous()
+        new_out = new_out.view(new_out.shape[0],1,new_out.shape[1])
+        # new_out = torch.index_select(new_out,1,Variable(torch.LongTensor([new_out.shape[1]-1]))).squeeze()
+        new_out = self.Discriminator_MLP(new_out)
         new_out = self.SigmoidDiscriminator(new_out)
         # print("bla")
         # print("Discriminator output size: ", new_out.shape, new_out)
@@ -323,7 +326,7 @@ class BidirectionalAttentionFlow(Model):
         #     domain_indices = domain_indices[domain_mask]
         if self.training == False:
             train_mode = 0
-        print(domain_info,domain_indices)
+        # print(domain_info,domain_indices)
         """
         Domain Info:
         0 - Corresponds to source domain
@@ -349,7 +352,7 @@ class BidirectionalAttentionFlow(Model):
             loss = 0
             ploss = 0
         ## Model loss
-        print ("Before adding perfomance loss",ploss)
+        # print ("Before adding perfomance loss",ploss)
         if span_start is not None and train_mode == 0:
             if domain_indices is None or len(domain_indices)>0:
                 if domain_indices is not None:
@@ -374,7 +377,7 @@ class BidirectionalAttentionFlow(Model):
                 self._span_end_accuracy(span_end_logits, span_end.squeeze(-1))
                 self._span_accuracy(best_span_loss, torch.stack([span_start, span_end], -1))
 
-        print("After adding",loss.data)
+        # print("After adding",loss.data)
 
         if metadata is not None:
             output_dict['best_span_str'] = []
