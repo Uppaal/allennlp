@@ -316,8 +316,9 @@ class BidirectionalAttentionFlow(Model):
         ##################################### Masking based on target and source ##########################
         domain_info = torch.FloatTensor([metadata[i]['domain'] for i in range(len(metadata))])
         domain_indices = torch.LongTensor([i for i in range(len(metadata))])
-        domain_mask = domain_info > 0.5
-        domain_indices = domain_indices[domain_mask]
+        domain_mask = domain_info < 0.5
+        if self.training:
+            domain_indices = domain_indices[domain_mask]
         if self.training == False:
             train_mode = 0
         # print(domain_info)
@@ -336,12 +337,17 @@ class BidirectionalAttentionFlow(Model):
         # print("Initial loss type",span_start,domain_indices,train_mode )
 
         ## Discriminator Loss
-        if train_mode == 0:
+        if train_mode == 0 and self.training:
             loss = self.DiscriminatorCriterion(new_out,Variable(torch.ones(domain_info.shape)-domain_info))
-        else:
+            ploss = loss.data
+        elif train_mode == 1:
             loss = self.DiscriminatorCriterion(new_out, Variable(domain_info))
+            ploss = loss.data
+        else:
+            loss = 0
+            ploss = 0
         ## Model loss
-        print ("Before adding perfomance loss",loss.data)
+        print ("Before adding perfomance loss",ploss)
         if span_start is not None and len(domain_indices)>0 and train_mode == 0:
             ###################################################################################################
             # print("inside")
