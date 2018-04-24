@@ -16,10 +16,8 @@
       }
     }
   },
- "train_data_path": "data/squad_10/train-v1.1.json",       // Train on SQuAD
-  "train_data_path_target": "data/NewsQA_10/train-v1.1.json",       // Train on NewsQA
- "validation_data_path": "data/squad/dev-v1.1.json",
-  "validation_data_path_target": "data/NewsQA/dev-v1.1.json",
+ "train_data_path": "data/Dev/dev_small.json",
+ "validation_data_path": "data/Dev/dev_small.json",
   "model": {
     "type": "bidaf",
     "text_field_embedder": {
@@ -80,7 +78,7 @@
   "iterator": {
     "type": "bucket",
     "sorting_keys": [["passage", "num_tokens"], ["question", "num_tokens"]],
-    "batch_size": 15
+    "batch_size": 5 //40
   },
 
   "trainer": {

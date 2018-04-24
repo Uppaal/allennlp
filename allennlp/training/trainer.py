@@ -456,10 +456,14 @@ class Trainer:
             domain_mask = domain_info < 0.5
             domain_indices = domain_indices[domain_mask]
             if batch['span_start'].is_cuda:
-                domain_indices.cuda()
-                domain_info.cuda()
+                #print("inside")
+                #print(domain_indices.is_cuda)
+                domain_indices = domain_indices.cuda()
+                #print(domain_indices.is_cuda)
+                domain_info = domain_info.cuda()
             batch['domain_indices'] = domain_indices
             batch['domain_info'] = domain_info
+            #print("cuda check",domain_indices.is_cuda,batch['span_start'].is_cuda)
             """
             Domain Info:
             0 - Corresponds to source domain
