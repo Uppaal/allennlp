@@ -1,8 +1,8 @@
 import argparse
 import json
+import os, nltk
 
 import datefinder
-import nltk
 import pandas as pd
 
 from analysis.utils import *
@@ -28,17 +28,7 @@ def get_args():
     # source- NewsQA-- on which evaluation is to be done
     # parser.add_argument('-s', "--source_file", default='')
     parser.add_argument('-d', "--data", default='data/squad/train-v1.1.json')
-
-    # Need logits to get best span for every id
-    # parser.add_argument('-t_logits', "--target_logits", default='')
-    # dump is the final output dump file
-    # parser.add_argument('-t_dump', "--target_dump_file", default='')
-
-    # parser.add_argument("--score-type", default=0)
-    # parser.add_argument("--scoring", default='entropy')
-    # parser.add_argument('-g', "--gpu", default=0)
-    # parser.add_argument('-p', "--percent", default=1)
-
+    parser.add_argument('-t', "--target", default="data/squad_df.pkl")
     return parser.parse_args()
 
 
@@ -151,46 +141,6 @@ def process_answers_list(answers_list):
     return answer_features
 
 
-def analyze_dataset():
-    args = get_args()
-
-    data = get_json_data(args)
-    # print(len(data))
-
-    limit = 2
-    count = 0
-
-    loc = 1
-    for item in data:
-        paragraphs_list = item['paragraphs']
-        # print(len(paragraphs_list))
-
-        for paragraph in paragraphs_list:
-            # print(paragraph.keys())
-            context = paragraph['context']
-            if count < limit:
-                count += 1
-            else:
-                break
-            context_features = process_context(context)
-
-            qas_list = paragraph['qas']
-            # print(len(qas_list))
-            for qas in qas_list:
-                id = qas['id']
-
-                question = qas['question']
-                question_features = process_question(question)
-
-                answers_list = qas['answers']
-                answer_features = process_answers_list(answers_list)
-
-                insert_values_into_dataframe(loc, context_features, question_features, answer_features)
-                loc += 1
-    # print(dataframe.iloc[0])
-    print(dataframe)
-
-
 def insert_values_into_dataframe(loc, context_features, question_features, answer_features):
     context_length = context_features['context-length']
     context_ner_features = context_features['ner-features']
@@ -216,12 +166,59 @@ def insert_values_into_dataframe(loc, context_features, question_features, answe
     num_question_ner_features = len(question_ner_features)
 
     row_values = [context_length, num_context_ner_features, context_ner_features, num_context_date_features,
-                context_date_features, curr_word, curr_word_pos, prev_word, prev_word_pos, next_word,
-                next_word_pos, wh_begin, num_question_ner_features, question_ner_features, answer_length,
-                answer_start, num_answer_ner_features, answer_ner_features, num_answer_date_features,
-                answer_date_features]
+                  context_date_features, curr_word, curr_word_pos, prev_word, prev_word_pos, next_word,
+                  next_word_pos, wh_begin, num_question_ner_features, question_ner_features, answer_length,
+                  answer_start, num_answer_ner_features, answer_ner_features, num_answer_date_features,
+                  answer_date_features]
 
     dataframe.loc[loc] = row_values
+
+def analyze_dataset():
+    args = get_args()
+
+    data = get_json_data(args)
+    # print(len(data))
+
+    limit = 2
+    count = 0
+
+    loc = 1
+    par_index = 1
+    for item in data:
+        paragraphs_list = item['paragraphs']
+        # print(len(paragraphs_list))
+        print("Par: ", par_index)
+        par_index += 1
+
+        for paragraph in paragraphs_list:
+            # print(paragraph.keys())
+            context = paragraph['context']
+            if count < limit:
+                count += 1
+            else:
+                break
+                count += 1
+                # pass
+            context_features = process_context(context)
+
+            qas_list = paragraph['qas']
+            # print(len(qas_list))
+            for qas in qas_list:
+                id = qas['id']
+
+                question = qas['question']
+                question_features = process_question(question)
+
+                answers_list = qas['answers']
+                answer_features = process_answers_list(answers_list)
+
+                insert_values_into_dataframe(loc, context_features, question_features, answer_features)
+                loc += 1
+    # print(dataframe.iloc[0])
+    # print(dataframe)
+    dataframe.to_pickle(args.target)
+    df = pd.read_pickle(args.target)
+    print(df)
 
 def get_json_data(args):
     file = open(args.data, 'r')
@@ -232,8 +229,8 @@ def get_json_data(args):
 
 
 if __name__ == '__main__':
-    # print(os.getcwd())
-    # nltk.download('averaged_perceptron_tagger')
-    # nltk.download('maxent_ne_chunker')
-    # nltk.download('words')
+    print(os.getcwd())
+    nltk.download('averaged_perceptron_tagger')
+    nltk.download('maxent_ne_chunker')
+    nltk.download('words')
     analyze_dataset()
