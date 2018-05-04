@@ -80,15 +80,15 @@ def process(args, score_type, scoring):
                 if score_type == 0:
                     scores, score_mul = Score.score_all_using_logits_sum_all(start_spans[i], end_spans[i], dtype)
                 elif score_type == 1:
-                    scores, score_mul = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
-                elif score_type == 2:
                     scores, score_mul = Score.score_all_using_softmax_sum_all(start_spans[i], end_spans[i], dtype)
-                elif score_type == 3:
-                    scores, score_mul = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
-                elif score_type == 4:
+                elif score_type == 2:
                     scores, score_mul = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
-                elif score_type == 5:
+                elif score_type == 3:
                     scores, score_mul = Score.score_topk_using_softmax(start_spans[i], end_spans[i], dtype, args.k)
+                elif score_type == 4:
+                    scores, score_mul = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
+                elif score_type == 5:
+                    scores, score_mul = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
                 entropy_scores.append(scores)
                 # score_mul_list.append(score_mul)
         if scoring == 'classifier':
@@ -104,7 +104,10 @@ def process(args, score_type, scoring):
         sorted_values = np.array(scores).argsort()
     if scoring =='entropy':
         score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
-        sorted_values = score_df.sort_values(by = 'entropy', ascending = True)
+        if score_type = 4 or score_type = 5:
+        	sorted_values = score_df.sort_values(by = 'entropy', ascending = True)
+        else:
+        	sorted_values = score_df.sort_values(by = 'entropy', ascending = False)
 
     sorted_values.to_csv(args.target_dump_selected_ids.split(".")[0][:] + ".csv", encoding='utf-8', index=False)
 
