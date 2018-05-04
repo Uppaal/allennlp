@@ -3,8 +3,21 @@ import os
 import pickle
 import argparse
 
+def get_args():
+    parser = argparse.ArgumentParser()
+
+    home = "/home/iankit/maluuba/allennlp/active_data/"
+
+    s_dir = ""
+    o_file = "/combined_logits.p"
+    parser.add_argument('-s_dir', default = s_dir)
+    parser.add_argument('-o_file', default =o_file)
+
+    return parser.parse_args()
+
 def combine_logits_from_file(args):
-    directory = os.path.join("active_learning","data",args.dir,args.iteration,"eval_per_epoch") #"data/eval_per_epoch"
+    directory = args.s_dir
+
     print("\nCreate logits file from ",directory)
     final = []
     for subdir, dirs, files in os.walk(directory):
@@ -22,14 +35,13 @@ def combine_logits_from_file(args):
                     df = pd.read_json(ele)
                     final.append(df)
     result = pd.concat(final)
-    path = os.path.join("active_learning","data", args.dir, args.iteration)
-    f = open(path+'/logits.p', 'wb')
+    f = open(args.o_file, 'wb')
     pickle.dump(result, f)
 
 
+
+
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-d', "--dir", default=None)
-    parser.add_argument('-i', "--iteration", default=None)
-    args = parser.parse_args()
+    # print(os.getcwd())
+    args = get_args()
     combine_logits_from_file(args)

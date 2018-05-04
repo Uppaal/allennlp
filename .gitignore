@@ -29,3 +29,9 @@ allen/
 output_active/
 output_joint/
 logits/
+analysis/data
+analysis/graphs
+analysis/.ipynb_check*
+
+
+active_data/
