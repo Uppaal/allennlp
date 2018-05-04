@@ -1,4 +1,5 @@
 .DS_Store
+active_data
 .idea
 data
 *.pyc
