@@ -1,4 +1,4 @@
-import json
+import json,os
 import logging
 from typing import Dict, List, Tuple
 
@@ -48,7 +48,7 @@ class SquadReader(DatasetReader):
     def _read(self, file_path: str):
         # if `file_path` is a URL, redirect to the cache
         file_path = cached_path(file_path)
-
+        print(os.getcwd())
         logger.info("Reading file at %s", file_path)
         with open(file_path) as dataset_file:
             dataset_json = json.load(dataset_file)

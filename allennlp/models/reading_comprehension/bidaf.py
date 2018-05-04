@@ -74,6 +74,7 @@ class BidirectionalAttentionFlow(Model):
                  attention_similarity_function: SimilarityFunction,
                  modeling_layer: Seq2SeqEncoder,
                  span_end_encoder: Seq2SeqEncoder,
+                 iter, dir, 
                  total_items = 0,
                  dropout: float = 0.2,
                  mask_lstms: bool = True,
@@ -88,6 +89,7 @@ class BidirectionalAttentionFlow(Model):
         self._matrix_attention = MatrixAttention(attention_similarity_function)
         self._modeling_layer = modeling_layer
         self._span_end_encoder = span_end_encoder
+        self._dir = str(dir)+"/"+str(iter) + "/"
 
         encoding_dim = phrase_layer.get_output_dim()
         modeling_dim = modeling_layer.get_output_dim()
@@ -319,16 +321,20 @@ class BidirectionalAttentionFlow(Model):
         #print("In dump logits!")
         limit = 1000
         #limit = 5
-        eval_per_epoch = "eval_per_epoch"
+        eval_per_epoch = self._dir+"eval_per_epoch"
+        print("Current eval_per_epoch stored: ", eval_per_epoch)
         if not os.path.isdir(eval_per_epoch):
             os.makedirs(eval_per_epoch)
         epoch_dir = eval_per_epoch+"/"+str(self.epoch)
         if not os.path.isdir(epoch_dir):
             os.makedirs(epoch_dir)
         filename = epoch_dir+"/logits.json"
+        #print("OUTSIDE ",filename)
         if self.current_batch_count > limit:
+            #print("\n\nINSIDE ", filename, "\n\n")
             filename = epoch_dir+"/logits_" + str(self.saved_batch_count) + ".json"
             self.current_batch_count = 0
+
 
         file = open(filename, 'a')
         # print(type(span_start_logits), span_start_logits.data.shape, len(metadata))
@@ -415,6 +421,11 @@ class BidirectionalAttentionFlow(Model):
 
         mask_lstms = params.pop_bool('mask_lstms', True)
         total_items = params.pop_int('total_items', 0)
+        #dir = params.pop("dir", "output/nonsense") 
+        dir = params.pop("dir", "active_learning/data/certain-logits-dump10-top10")
+        iter = params.pop("iter","2")
+        print("Start next job!")
+
         params.assert_empty(cls.__name__)
         return cls(vocab=vocab,
                    text_field_embedder=text_field_embedder,
@@ -426,4 +437,4 @@ class BidirectionalAttentionFlow(Model):
                    dropout=dropout,
                    mask_lstms=mask_lstms,
                    initializer=initializer,
-                   regularizer=regularizer, total_items=total_items)
+                   regularizer=regularizer, total_items=total_items, iter=iter, dir=dir)

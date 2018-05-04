@@ -6,25 +6,26 @@ import LogitsScore, SoftmaxScore
 
 def score_all_using_logits(start, end, dtype):
     start, end = score_all(start, end)
-
+    print("Score all usign logits")
     return LogitsScore.calculate_total(start, end, dtype)
 
 
 def score_topk_using_logits(start, end, dtype, top=1):
     start, end = score_top(start, end, top=top)
 
+    print("Score all using topk")
     return LogitsScore.calculate_total(start, end, dtype)
 
 
 def score_all_using_softmax(start, end, dtype):
     start, end = score_all(start, end)
-
+    print("Score all using softmax")
     return SoftmaxScore.calculate_total(start, end, dtype)
 
 
 def score_topk_using_softmax(start, end, dtype, top=1):
     start, end = score_top(start, end, top=top)
-
+    print("Score all using topk softm")
     return SoftmaxScore.calculate_total(start, end, dtype)
 
 

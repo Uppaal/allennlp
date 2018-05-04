@@ -16,5 +16,5 @@ def calculate_total(start, end, dtype):
     y = score_mul * y
     # print("total ")
     total = -1 * torch.sum(y)
-    # print(total)
+    print(total)
     return total

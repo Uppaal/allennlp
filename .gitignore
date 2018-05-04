@@ -21,3 +21,10 @@ outputs/
 env/
 output/
 data/
+
+*.err
+*.out
+allen/
+output_active/
+output_joint/
+logits/

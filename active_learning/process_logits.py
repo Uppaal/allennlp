@@ -23,6 +23,7 @@ def get_args():
 
     parser.add_argument('-s', "--source_file", default=home + source_file)
     parser.add_argument('-s_logits', "--source_logits_file", default=home + source_logits_file)
+
     #dumping data
     parser.add_argument('-t_selected_ids', "--target_dump_selected_ids", default=home + target_dump_selected_ids)
     parser.add_argument('-t_unselected_ids', "--target_dump_unselected_ids", default=home + target_dump_unselected_ids)
@@ -42,6 +43,7 @@ def get_args():
 
 
 def process(args, score_type):
+    print(args)
     df_logits = pickle.load(open(args.source_logits_file, 'rb'))
     logits_ids = list(df_logits.id)
     start_spans = list(df_logits.span_start_logits)
@@ -58,6 +60,7 @@ def process(args, score_type):
 
     for i in range(len(start_spans)):
     # for i in range(50):
+        score_type = int(score_type)
         scores = None
         if score_type == 0:
             scores = Score.score_all_using_logits(start_spans[i], end_spans[i], dtype)
@@ -72,10 +75,9 @@ def process(args, score_type):
     print("Sorting now")
 
     score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
-    # print(df)
 
     sorted_values = score_df.sort_values('entropy', ascending=False)
-    # print(sorted_values)
+    sorted_values.to_csv(args.target_dump_selected_ids.split(".")[0][:] + ".csv", encoding='utf-8', index=False)
 
     num_top_values = int(int(args.percent) * len(sorted_values) / 100)
     # print(idx)

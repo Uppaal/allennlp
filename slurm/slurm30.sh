@@ -20,7 +20,7 @@ module load cuda80/profiler/8.0.44
 module load cuda80/toolkit/8.0.44
 
 ## Change this line so that it points to your bidaf github folder
-cd /home/usaxena/work/s18/696/allennlp
+cd /home/usaxena/work/s18/696/allen2
 
 # Training (Default - on SQuAD)
 python -m allennlp.run train training_config/bidaf30.json -s output_path_newsqa_batch30

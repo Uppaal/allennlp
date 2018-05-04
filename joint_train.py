@@ -43,7 +43,7 @@ def process(args):
     splits = ["train","dev"]
     for split in splits:
         fname = split+"-v1.1.json"
-        tfname = split+".json" 
+        tfname = split+"-v1.1.json" 
         print("Source: ",source_dir+fname)
         print("Target: ", target_dir+tfname)
         sf = pd.read_json(source_dir+fname)

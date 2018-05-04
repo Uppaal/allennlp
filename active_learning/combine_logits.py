@@ -1,10 +1,11 @@
 import pandas as pd
 import os
 import pickle
+import argparse
 
-
-def combine_logits_from_file():
-    directory = "data/squad_eval_per_epoch"
+def combine_logits_from_file(args):
+    directory = os.path.join("active_learning","data",args.dir,args.iteration,"eval_per_epoch") #"data/eval_per_epoch"
+    print("\nCreate logits file from ",directory)
     final = []
     for subdir, dirs, files in os.walk(directory):
         for filename in files:
@@ -21,12 +22,14 @@ def combine_logits_from_file():
                     df = pd.read_json(ele)
                     final.append(df)
     result = pd.concat(final)
-    f = open('data/squad_train_logits.p', 'wb')
+    path = os.path.join("active_learning","data", args.dir, args.iteration)
+    f = open(path+'/logits.p', 'wb')
     pickle.dump(result, f)
 
 
-
-
 if __name__ == '__main__':
-    # print(os.getcwd())
-    combine_logits_from_file()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-d', "--dir", default=None)
+    parser.add_argument('-i', "--iteration", default=None)
+    args = parser.parse_args()
+    combine_logits_from_file(args)
