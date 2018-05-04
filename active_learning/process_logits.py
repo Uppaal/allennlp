@@ -16,12 +16,14 @@ from utils import *
 def get_args():
     parser = argparse.ArgumentParser()
 
-    home = "./"
+    home = "~/maluuba/allennlp/"
 
     source_logits_file = "active_data/squad_small/combined.p"
     source_file = "active_data/squad/train-v1.1.json"
     target_file = "data/newsqa/top_dev_dump.json"
-  
+    target_dump_selected_ids = "active_data/selected_ids.json"
+    target_dump_unselected_ids = "active_data/selected_ids.json"
+
     parser.add_argument('-s', "--source_file", default=home + source_file)
     parser.add_argument('-t', "--target_file", default=home + target_file)
     parser.add_argument('-t_dump', "--target_dump_file", default=home + target_file)
