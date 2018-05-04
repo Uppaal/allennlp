@@ -20,13 +20,13 @@ module load cuda80/profiler/8.0.44
 module load cuda80/toolkit/8.0.44
 
 ## Change this line so that it points to your bidaf github folder
-cd /home/usaxena/work/s18/696/allen2
+cd /home/iankit/maluuba/allennlp
 
 # Training (Default - on SQuAD)
-python -m allennlp.run train training_config/bidaf30.json -s output_path_newsqa_batch30
+#python -m allennlp.run train training_config/bidaf30.json -s output_path_newsqa_batch30
 
 # Evaluation (Default - on SQuAD)
-# python -m allennlp.run evaluate https://s3-us-west-2.amazonaws.com/allennlp/models/bidaf-model-2017.09.15-charpad.tar.gz --evaluation-data-file https://s3-us-west-2.amazonaws.com/allennlp/datasets/squad/squad-dev-v1.1.json
+python -m allennlp.run evaluate https://s3-us-west-2.amazonaws.com/allennlp/models/bidaf-model-2017.09.15-charpad.tar.gz --evaluation-data-file https://s3-us-west-2.amazonaws.com/allennlp/datasets/squad/squad-dev-v1.1.json
 
 # Evaluate on NewsQA
 # python -m allennlp.run evaluate https://s3-us-west-2.amazonaws.com/allennlp/models/bidaf-model-2017.09.15-charpad.tar.gz --evaluation-data-file "data/newsqa_raw/test-v1.1.json"
