@@ -285,8 +285,6 @@ class BidirectionalAttentionFlow(Model):
         # print(output_dict)
         # print(torch.shape(span_start_logits))
         # print(len(metadata))
-        if self.training == False:
-            self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
             
 
         if span_start is not None:
@@ -296,6 +294,10 @@ class BidirectionalAttentionFlow(Model):
             self._span_end_accuracy(span_end_logits, span_end.squeeze(-1))
             self._span_accuracy(best_span, torch.stack([span_start, span_end], -1))
             output_dict["loss"] = loss
+
+        if self.training == False:
+            self.dump_results(metadata, self._span_accuracy)
+            self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
         if metadata is not None:
             output_dict['best_span_str'] = []
             question_tokens = []
@@ -365,6 +367,46 @@ class BidirectionalAttentionFlow(Model):
         if self.saved_batch_count >= self.total_items:
             self.saved_batch_count = 0
             self.epoch += 1
+        file.close()
+
+    def dump_results(self, metadata, span_accuracy):
+        limit = 1000
+        # limit = 5
+        results_dump = self._dir + "results_dump_small"
+        print("Current results_dump_small stored: ", results_dump)
+        if not os.path.isdir(results_dump):
+            os.makedirs(results_dump)
+        epoch_dir = results_dump + "/" + str(self.epoch)
+        if not os.path.isdir(epoch_dir):
+            os.makedirs(epoch_dir)
+        filename = epoch_dir + "/results.json"
+        print("OUTSIDE ",filename)
+        if self.current_batch_count > limit:
+            print("\n\nINSIDE ", filename, "\n\n")
+            filename = epoch_dir + "/results_" + str(self.saved_batch_count) + ".json"
+            self.current_batch_count = 0
+
+        file = open(filename, 'a')
+
+        predicted_span_data = np.array(span_accuracy.predictions).tolist()
+        print(predicted_span_data)
+
+        gold_label_data = np.array(span_accuracy.gold_labels).tolist()
+
+        correct_data = np.array(span_accuracy.correct).tolist()
+        jsonObjectList = []
+
+        i = 0
+        for metadatum in metadata:
+            jsonObject = {}
+            jsonObject['id'] = metadatum['id']
+            jsonObject['predicted_spans'] = predicted_span_data[i]
+            jsonObject['gold_labels'] = gold_label_data[i]
+            jsonObject['gold_labels'] = gold_label_data[i]
+            jsonObject['correct'] = correct_data[i]
+            jsonObjectList.append(jsonObject)
+            i += 1
+        json.dump(jsonObjectList, file)
         file.close()
 
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:

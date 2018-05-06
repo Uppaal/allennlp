@@ -20,6 +20,10 @@ class BooleanAccuracy(Metric):
         self._correct_count = 0.
         self._total_count = 0.
 
+        self.predictions = None
+        self.gold_labels = None
+        self.correct = None
+
     def __call__(self,
                  predictions: torch.Tensor,
                  gold_labels: torch.Tensor,
@@ -52,6 +56,11 @@ class BooleanAccuracy(Metric):
         count = torch.ones(gold_labels.size(0))
         self._correct_count += correct.sum()
         self._total_count += count.sum()
+
+        # For analyzing the dataset
+        self.predictions = predictions
+        self.gold_labels = gold_labels
+        self.correct = correct
 
     def get_metric(self, reset: bool = False):
         """
