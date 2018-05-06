@@ -422,8 +422,8 @@ class BidirectionalAttentionFlow(Model):
         mask_lstms = params.pop_bool('mask_lstms', True)
         total_items = params.pop_int('total_items', 0)
         #dir = params.pop("dir", "output/nonsense") 
-        dir = params.pop("dir", "active_learning/data/certain-logits-dump10-top10")
-        iter = params.pop("iter","2")
+        dir = params.pop("dir", "active_learning/data/test")
+        iter = params.pop("iter","1")
         print("Start next job!")
 
         params.assert_empty(cls.__name__)

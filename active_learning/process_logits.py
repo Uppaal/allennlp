@@ -16,11 +16,13 @@ from utils import *
 def get_args():
     parser = argparse.ArgumentParser()
 
-    home = "./"
+    home = "~/maluuba/allennlp/"
 
     source_logits_file = "active_data/squad_small/combined.p"
     source_file = "active_data/squad/train-v1.1.json"
     target_file = "data/newsqa/top_dev_dump.json"
+    target_dump_selected_ids = "active_data/selected_ids.json"
+    target_dump_unselected_ids = "active_data/selected_ids.json"
 
     parser.add_argument('-s', "--source_file", default=home + source_file)
     parser.add_argument('-t', "--target_file", default=home + target_file)
@@ -78,15 +80,15 @@ def process(args, score_type, scoring):
                 if score_type == 0:
                     scores, score_mul = Score.score_all_using_logits_sum_all(start_spans[i], end_spans[i], dtype)
                 elif score_type == 1:
-                    scores, score_mul = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
-                elif score_type == 2:
                     scores, score_mul = Score.score_all_using_softmax_sum_all(start_spans[i], end_spans[i], dtype)
-                elif score_type == 3:
-                    scores, score_mul = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
-                elif score_type == 4:
+                elif score_type == 2:
                     scores, score_mul = Score.score_topk_using_logits(start_spans[i], end_spans[i], dtype, args.k)
-                elif score_type == 5:
+                elif score_type == 3:
                     scores, score_mul = Score.score_topk_using_softmax(start_spans[i], end_spans[i], dtype, args.k)
+                elif score_type == 4:
+                    scores, score_mul = Score.score_all_using_logits_contrast(start_spans[i], end_spans[i], dtype)
+                elif score_type == 5:
+                    scores, score_mul = Score.score_all_using_softmax_contrast(start_spans[i], end_spans[i], dtype)
                 entropy_scores.append(scores)
                 # score_mul_list.append(score_mul)
         if scoring == 'classifier':
@@ -102,7 +104,10 @@ def process(args, score_type, scoring):
         sorted_values = np.array(scores).argsort()
     if scoring =='entropy':
         score_df = pd.DataFrame(list(zip(logits_ids, entropy_scores)), columns=['ids', 'entropy'])
-        sorted_values = score_df.sort_values(by = 'entropy', ascending = True)
+        if score_type = 4 or score_type = 5:
+        	sorted_values = score_df.sort_values(by = 'entropy', ascending = True)
+        else:
+        	sorted_values = score_df.sort_values(by = 'entropy', ascending = False)
 
     sorted_values.to_csv(args.target_dump_selected_ids.split(".")[0][:] + ".csv", encoding='utf-8', index=False)
 
