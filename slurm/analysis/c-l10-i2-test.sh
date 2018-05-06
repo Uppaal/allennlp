@@ -1,13 +1,10 @@
 #!/bin/bash
 #
-#SBATCH --mem=50000
-#SBATCH --job-name=s-emb
+#SBATCH --job-name=cl10i2-te
 #SBATCH --partition=m40-long
-#SBATCH --output=squad-train-emb-%A.out
-#SBATCH --error=squad-train-emb-%A.err
+#SBATCH --output=cl10i2-test-%A.out
+#SBATCH --error=cl10i2-test-%A.err
 #SBATCH --gres=gpu:1
-#SBATCH --mail-type=ALL
-#SBATCH --mail-user=ruppaal@cs.umass.edu
 
 # Log what we're running and where.
 echo $SLURM_JOBID - `hostname` >> ~/slurm-jobs.txt
