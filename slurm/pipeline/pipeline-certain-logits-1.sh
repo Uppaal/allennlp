@@ -59,14 +59,14 @@ mkdir active_learning/data/$dir/$i
 echo "------------Starting evaluation-----------"
 
 # 1. Evaluate on unselected NewsQA (100-beta)%
-python -m allennlp.run evaluate output_active/$dir/iteration_$iprev/model.tar.gz --evaluation-data-file "data/active_learning/retained_target/$dir/$iprev.json"
+#python -m allennlp.run evaluate output_active/$dir/iteration_$iprev/model.tar.gz --evaluation-data-file "data/active_learning/retained_target/$dir/$iprev.json"
 
 echo "-----------Evaluation complete. Extracting logits---------"
 
 # 2. Select top k%
-python active_learning/combine_logits.py --dir $dir --iteration $i
-python active_learning/process_logits_certain.py --gpu 1 --source_logits_file "active_learning/data/$dir/$i/logits.p" --source_file "data/active_learning/retained_target/$dir/$iprev.json" --target_dump_selected_ids "data/active_learning/uncertain_logits/$dir/$i.json" --target_dump_unselected_ids "data/active_learning/retained_target/$dir/$i.json" \
-              --score-type 0 --percent 1
+#python active_learning/combine_logits.py --dir $dir --iteration $i
+#python active_learning/process_logits_certain.py --gpu 1 --source_logits_file "active_learning/data/$dir/$i/logits.p" --source_file "data/active_learning/retained_target/$dir/$iprev.json" --target_dump_selected_ids "data/active_learning/uncertain_logits/$dir/$i.json" --target_dump_unselected_ids "data/active_learning/retained_target/$dir/$i.json" \
+#              --score-type 0 --percent 1
 
 # 3. Joint selected data with (SQuAD + beta% NQA)
 cp data/active_learning/uncertain_logits/$dir/$i.json data/active_learning/pipeline/$dir/train.json
@@ -84,8 +84,8 @@ python -m allennlp.run fine-tune \
 echo "-----------Training complete. Evaluating on test sets-------------"
 
 # 5. Evaluate on the test sets of SQuAD and NewsQA
-#python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
-#python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
+python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
+python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
 
 # Remove additional files
 rm -r "data/active_learning/pipeline/$dir/"

@@ -59,7 +59,7 @@ mkdir active_learning/data/$dir/$i
 echo "------------Starting evaluation-----------"
 
 # 1. Evaluate on unselected NewsQA (100-beta)%
-python -m allennlp.run evaluate output_active/$dir/iteration_$iprev/model.tar.gz --evaluation-data-file "data/active_learning/retained_target/$dir/$iprev.json"
+#python -m allennlp.run evaluate output_active/$dir/iteration_$iprev/model.tar.gz --evaluation-data-file "data/active_learning/retained_target/$dir/$iprev.json"
 
 echo "-----------Evaluation complete. Extracting logits---------"
 
@@ -84,8 +84,8 @@ python -m allennlp.run fine-tune \
 echo "-----------Training complete. Evaluating on test sets-------------"
 
 # 5. Evaluate on the test sets of SQuAD and NewsQA
-#python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
-#python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
+python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/squad/dev-v1.1.json"
+python -m allennlp.run evaluate output_active/$dir/iteration_$i/model.tar.gz --evaluation-data-file "data/NewsQA/test-v1.1.json"
 
 # Remove additional files
 rm -r "data/active_learning/pipeline/$dir/"
