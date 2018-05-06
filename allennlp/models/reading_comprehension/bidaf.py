@@ -467,6 +467,7 @@ class BidirectionalAttentionFlow(Model):
         dir = params.pop("dir", "active_learning/data/test")
         iter = params.pop("iter","1")
         print("Start next job!")
+        logger.info("Start next job!")
 
         params.assert_empty(cls.__name__)
         return cls(vocab=vocab,

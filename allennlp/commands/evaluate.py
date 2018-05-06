@@ -109,6 +109,7 @@ def evaluate_from_args(args: argparse.Namespace) -> Dict[str, Any]:
     prepare_environment(config)
     model = archive.model
     print("Eval dir: ", model._dir)
+    logger.info("Eval dir: ", model._dir)
     model.eval()
 
     # Load the evaluation data
