@@ -40,10 +40,10 @@ def process(args):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-    splits = ["train","dev"]
+    splits = ["train"]#,"dev"]
     for split in splits:
         fname = split+"-v1.1.json"
-        tfname = split+"-v1.1.json" 
+        tfname = split+".json" 
         print("Source: ",source_dir+fname)
         print("Target: ", target_dir+tfname)
         sf = pd.read_json(source_dir+fname)
