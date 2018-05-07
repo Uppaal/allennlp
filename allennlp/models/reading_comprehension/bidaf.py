@@ -297,7 +297,7 @@ class BidirectionalAttentionFlow(Model):
 
         if self.training == False:
             self.dump_results(metadata, self._span_accuracy)
-            self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
+            # self.dump_logits(metadata, span_start_logits, span_start_probs, span_end_logits, span_end_probs)
         if metadata is not None:
             output_dict['best_span_str'] = []
             question_tokens = []
@@ -407,6 +407,15 @@ class BidirectionalAttentionFlow(Model):
             jsonObjectList.append(jsonObject)
             i += 1
         json.dump(jsonObjectList, file)
+
+        self.saved_batch_count += len(metadata)
+        self.current_batch_count += len(metadata)
+        if self.total_items == 0:
+            self.total_items = limit
+        if self.saved_batch_count >= self.total_items:
+            self.saved_batch_count = 0
+            self.epoch += 1
+
         file.close()
 
     def get_metrics(self, reset: bool = False) -> Dict[str, float]:
