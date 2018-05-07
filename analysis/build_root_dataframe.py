@@ -28,10 +28,12 @@ def get_args():
     # source- NewsQA-- on which evaluation is to be done
     # parser.add_argument('-s', "--source_file", default='')
     # parser.add_argument('-d', "--data", default='data/squad/train-v1.1.json')
-    parser.add_argument('-d', "--data", default='data/newsqa/train_dump.json')
-    # parser.add_argument('-d', "--data", default='data/newsqa/dev_dump.json')
+    # parser.add_argument('-d', "--data", default='data/newsqa/train_dump.json')
+    parser.add_argument('-d', "--data", default='data/newsqa/dev_dump.json')
     # parser.add_argument('-t', "--target", default="data/squad_df.pkl")
-    parser.add_argument('-t', "--target", default="data/newsqa_df.pkl")
+    # parser.add_argument('-t', "--target", default="data/newsqa_df.pkl")
+    # parser.add_argument('-t', "--target", default="data/newsqa_dev_df.pkl")
+    parser.add_argument('-t', "--target", default="data/corrected_newsqa_dev_df.pkl")
     # parser.add_argument('-t', "--target", default="data/dev_trial_df.pkl")
     return parser.parse_args()
 
@@ -60,8 +62,10 @@ def process_context(context):
     tokenized_context_sentences = tokenize_sentences(context)
     context_length = 0
     for sentence in tokenized_context_sentences:
-        context_length += len(sentence)
-
+        for word in sentence:
+            context_length += len(word)
+        # context_length += len(sentence)
+    # print("CONTEXT_LENGTH: ", context_length)
     ner_features = get_ner_features(context)
     date_features = parse_date_features(context)
 
@@ -138,7 +142,9 @@ def process_answers_list(answers_list):
 
     answer_features = {}
     answer_features['answer-length'] = avg_answer_length
+    # print("L:", avg_answer_length)
     answer_features['answer-start'] = avg_start_sum
+    # print("S:", avg_start_sum)
     answer_features['ner-features'] = ner_features
     answer_features['date-features'] = date_features
 

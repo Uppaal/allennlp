@@ -39,7 +39,52 @@ def combine_logits_from_file(args):
     pickle.dump(result, f)
 
 
+def combine(s_dir, o_file):
+    args.s_dir = s_dir
+    args.o_file = o_file
+    combine_logits_from_file(args)
+
+
 if __name__ == '__main__':
     print(os.getcwd())
     args = get_args()
-    combine_logits_from_file(args)
+
+    s_dir = "data/analysis/cl10i1-test/0/results_dump_small"
+    o_file = "data/analysis/cl10i1-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/cl10i2-test/0/results_dump_small"
+    o_file = "data/analysis/cl10i2-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/cld10t1i1-test/0/results_dump_small"
+    o_file = "data/analysis/cld10t1i1-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/cld10t10i1-test/0/results_dump_small"
+    o_file = "data/analysis/cld10t10i1-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/cld10t10i2-test/0/results_dump_small"
+    o_file = "data/analysis/cld10t10i2-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/l10i3-test/0/results_dump_small"
+    o_file = "data/analysis/l10i3-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/ld10t1i3-test/0/results_dump_small"
+    o_file = "data/analysis/ld10t1i3-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/ld10t10i2-test/0/results_dump_small"
+    o_file = "data/analysis/ld10t10i2-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/ld10t10i3-test/0/results_dump_small"
+    o_file = "data/analysis/ld10t10i3-test.txt"
+    combine(s_dir, o_file)
+
+    s_dir = "data/analysis/sq-test/0/results_dump_small"
+    o_file = "data/analysis/sq-test.txt"
+    combine(s_dir, o_file)
